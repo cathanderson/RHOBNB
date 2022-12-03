@@ -28,5 +28,4 @@ ActiveRecord::Base.transaction do
     jenna = User.create!(email: 'jenna@rhobnb.com', password: 'password', first_name: 'jenna', last_name: 'lyons', rh_franchise: "rhony")
 
     puts "Done!"
-
 end
