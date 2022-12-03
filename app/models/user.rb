@@ -20,50 +20,50 @@
 #
 class User < ApplicationRecord
 
-    has_secure_password # handles password= and is_password?
+  has_secure_password # handles password= and is_password?
 
-    before_validation :ensure_session_token
+  before_validation :ensure_session_token
 
-    validates :email, :first_name, :last_name, :password_digest, :session_token, presence: true
-    validates :email, :session_token, uniqueness: true
-    validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
-    validates :password, length: { minimum: 8 }, allow_nil: true
-  
-    # MUST FINISH THESE BEFORE COMMENTING IN
+  validates :email, :first_name, :last_name, :password_digest, :session_token, presence: true
+  validates :email, :session_token, uniqueness: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :password, length: { minimum: 8 }, allow_nil: true
 
-    # has_many :reservations,
-    #   dependent: :destroy
-    # has_many :listings,
-    #   dependent: :destroy
-    # has_many :reviews,
-    #     dependent: :destroy
+  # MUST FINISH THESE BEFORE COMMENTING IN
 
-    def self.find_by_credentials(email, password)
-      user = User.find_by(email: email)
+  # has_many :reservations,
+  #   dependent: :destroy
+  # has_many :listings,
+  #   dependent: :destroy
+  # has_many :reviews,
+  #     dependent: :destroy
 
-      if user&.authenticate(password) # user && user.authenticate(password)
-        return user
-      else
-        nil
-      end
+  def self.find_by_credentials(email, password)
+    user = User.find_by(email: email)
+
+    if user&.authenticate(password) # user && user.authenticate(password)
+      return user
+    else
+      nil
     end
+  end
 
-    def ensure_session_token
-      self.session_token ||= generate_unique_session_token
+  def ensure_session_token
+    self.session_token ||= generate_unique_session_token
+  end
+
+  def reset_session_token!
+    self.session_token = generate_unique_session_token
+    save!
+    session_token
+  end
+
+  private
+
+  def generate_unique_session_token
+    while true
+      token = SecureRandom.urlsafe_base64
+      return token unless User.exists?(session_token: token)
     end
-
-    def reset_session_token!
-      self.session_token = generate_unique_session_token
-      save!
-      session_token
-    end
-
-    private
-
-    def generate_unique_session_token
-      while true
-        token = SecureRandom.urlsafe_base64
-        return token unless User.exists?(session_token: token)
-      end
-    end
+  end
 end
