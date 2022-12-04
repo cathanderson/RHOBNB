@@ -27,11 +27,12 @@ const storeCurrentUser = (user) => {
 };
 
 export const signup = (user) => async (dispatch) => {
-  const { username, email, password } = user;
+  const { first_name, last_name, email, password } = user; // Can't make these camel case for some reason???? Action works with snake case params tho
   const response = await csrfFetch("/api/users", {
     method: "POST",
     body: JSON.stringify({
-      username,
+      first_name,
+      last_name,
       email,
       password,
     }),
