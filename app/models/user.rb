@@ -61,6 +61,7 @@ class User < ApplicationRecord
   private
 
   def generate_unique_session_token
+    # debugger
     while true
       token = SecureRandom.urlsafe_base64
       return token unless User.exists?(session_token: token)
