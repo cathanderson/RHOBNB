@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import * as sessionActions from "../../store/session";
 
-function ProfileButton({ user }) {
+function LoggedInNav() {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
 
@@ -35,10 +35,19 @@ function ProfileButton({ user }) {
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
+          <div className="bold-dropdown-options">
+            <li>Messages</li>
+            <li>Trips</li>
+            <li>Wishlists</li>
+          </div>
           <li>
-            {user.firstName} {user.lastName}
+            <a href="https://github.com/cathanderson">Help</a>
           </li>
-          <li>{user.email}</li>
+          <li>
+            <a href="https://en.wikipedia.org/wiki/The_Real_Housewives">
+              Learn more about the Real Housewives
+            </a>
+          </li>
           <li>
             <button onClick={logout}>Log Out</button>
           </li>
@@ -48,4 +57,4 @@ function ProfileButton({ user }) {
   );
 }
 
-export default ProfileButton;
+export default LoggedInNav;
