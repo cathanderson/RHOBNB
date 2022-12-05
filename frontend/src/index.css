@@ -141,4 +141,9 @@ table {
     flex-direction: row;
     justify-content: flex-end;
     margin: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
 }

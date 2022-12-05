@@ -28,33 +28,34 @@ function LoginForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="login-form">
-      <ul>
-        {errors.map((error) => (
-          <li key={error}>{error}</li>
-        ))}
-      </ul>
-      <label>
-        Email
+    <>
+      <h3 className="form-title">Welcome to RHOBNB</h3>
+      <form onSubmit={handleSubmit} className="login-form">
+        <ul>
+          {errors.map((error) => (
+            <li key={error}>{error}</li>
+          ))}
+        </ul>
         <input
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
           required
         />
-      </label>
-      <label>
-        Password
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
           required
         />
-      </label>
-      <button type="submit">Log In</button>
-    </form>
+
+        <button type="submit">Log In</button>
+      </form>
+    </>
   );
+  
 }
 
 export default LoginForm;

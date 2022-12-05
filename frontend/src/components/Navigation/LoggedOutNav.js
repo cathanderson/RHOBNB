@@ -49,6 +49,14 @@ function LoggedOutNav() {
       </div>
       {showLoginModal && (
         <Modal onClose={() => setShowLoginModal(false)}>
+          <header className="modal-header">
+            <i
+              onClick={() => setShowLoginModal(false)}
+              className="fa-solid fa-x"
+            />
+            <h3 className="modal-title">Log in</h3>
+            <p> </p>
+          </header>
           <LoginForm />
         </Modal>
       )}
