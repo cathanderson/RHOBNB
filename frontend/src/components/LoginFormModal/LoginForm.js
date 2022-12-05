@@ -12,28 +12,39 @@ function LoginForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     setErrors([]);
+    // debugger
+    console.log("test1");
     return dispatch(sessionActions.login({ email, password })).catch(
       async (res) => {
         let data;
+        console.log("test2")
+        debugger;
         try {
           data = await res.clone().json();
         } catch {
-          data = await res.text(); 
+          data = await res.text();
         }
+
         if (data?.errors) setErrors(data.errors);
         else if (data) setErrors([data]);
         else setErrors([res.statusText]);
       }
+
     );
+    // dispatch(sessionActions.login({ email, password }))
+    //   .then((res) => console.log(res))
+    //   .catch((err) => {
+    //     console.log("my error", err);
+    //   });
   };
 
   const loginDemo = () => {
     const demoUser = {
       email: "demo@rhobnb.com",
       password: "password",
-    }
-    sessionActions.login({ demoUser });
-  }
+    };
+    dispatch(sessionActions.login({ demoUser }));
+  };
 
   return (
     <>
@@ -61,10 +72,9 @@ function LoginForm() {
 
         <button type="submit">Log in</button>
       </form>
-      <button className="demo-user-login-button" type="submit" onClick={loginDemo}>Log in as Demo User</button>
+      {/* <button className="demo-user-login-button" type="submit" onClick={loginDemo}>Log in as Demo User</button> */}
     </>
   );
-  
 }
 
 export default LoginForm;

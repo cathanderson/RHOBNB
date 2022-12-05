@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::API
     include ActionController::RequestForgeryProtection
-
+    # skip_before_action :verify_authenticity_token
     before_action :snake_case_params, :attach_authenticity_token
 
     rescue_from StandardError, with: :unhandled_error
