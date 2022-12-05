@@ -27,6 +27,14 @@ function LoginForm() {
     );
   };
 
+  const loginDemo = () => {
+    const demoUser = {
+      email: "demo@rhobnb.com",
+      password: "password",
+    }
+    sessionActions.login({ demoUser });
+  }
+
   return (
     <>
       <h3 className="login-form-title">Welcome to RHOBNB</h3>
@@ -51,8 +59,9 @@ function LoginForm() {
           required
         />
 
-        <button type="submit">Log In</button>
+        <button type="submit">Log in</button>
       </form>
+      <button className="demo-user-login-button" type="submit" onClick={loginDemo}>Log in as Demo User</button>
     </>
   );
   

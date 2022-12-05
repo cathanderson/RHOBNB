@@ -28,6 +28,7 @@
     border-color: rgb(239, 18, 92);
     background-color: rgb(239, 18, 92);
     color: white;
+    cursor: pointer;
 }
 
 .form-title {
