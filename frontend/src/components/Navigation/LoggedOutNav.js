@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-// import LoginFormModal from "../LoginFormModal/LoginForm";
+import LoginFormModal from "../LoginFormModal/LoginForm";
+import { Modal } from "../../context/Modal";
+import LoginForm from "../LoginFormModal/LoginForm";
 
 function LoggedOutNav() {
   const [showMenu, setShowMenu] = useState(false);
-
+  const [showLoginModal, setShowLoginModal] = useState(false);
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
@@ -29,9 +31,9 @@ function LoggedOutNav() {
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
-          {/* <li>
-            <LoginFormModal />
-          </li> */}
+          <li>
+            <button onClick={() => setShowLoginModal(true)}>Log In</button>
+          </li>
           <li>
             <NavLink to="/signup">Sign Up</NavLink>
           </li>
@@ -45,6 +47,12 @@ function LoggedOutNav() {
           </li>
         </ul>
       )}
+      {showLoginModal && (
+        <Modal onClose={() => setShowLoginModal(false)}>
+          <LoginForm />
+        </Modal>
+      )}
+      {/* {showModal && <LoginFormModal />} */}
     </>
   );
 }
