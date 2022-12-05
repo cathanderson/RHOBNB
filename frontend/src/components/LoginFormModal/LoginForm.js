@@ -13,12 +13,12 @@ function LoginForm() {
     e.preventDefault();
     setErrors([]);
     // debugger
-    console.log("test1");
+    // console.log("test1");
     return dispatch(sessionActions.login({ email, password })).catch(
       async (res) => {
         let data;
-        console.log("test2")
-        debugger;
+        // console.log("test2")
+        // debugger;
         try {
           data = await res.clone().json();
         } catch {
@@ -50,11 +50,6 @@ function LoginForm() {
     <>
       <h3 className="login-form-title">Welcome to RHOBNB</h3>
       <form onSubmit={handleSubmit} className="login-form">
-        <ul>
-          {errors.map((error) => (
-            <li key={error}>{error}</li>
-          ))}
-        </ul>
         <input
           type="text"
           value={email}
@@ -69,10 +64,14 @@ function LoginForm() {
           placeholder="Password"
           required
         />
-
+        <ul className="form-errors">
+          {errors.map((error) => (
+            <li key={error}>{error}</li>
+          ))}
+        </ul>
         <button type="submit">Log in</button>
       </form>
-      {/* <button className="demo-user-login-button" type="submit" onClick={loginDemo}>Log in as Demo User</button> */}
+      {/* <button className="demo-user-login-button" onClick={loginDemo}>Log in as Demo User</button> */}
     </>
   );
 }

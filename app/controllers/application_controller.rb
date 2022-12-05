@@ -6,7 +6,7 @@ class ApplicationController < ActionController::API
     rescue_from StandardError, with: :unhandled_error
     rescue_from ActionController::InvalidAuthenticityToken, with: :invalid_authenticity_token
 
-    protect_from_forgery with: :exception
+    protect_from_forgery with: :null_session #:exception
 
     def test
         if params.has_key?(:login)
@@ -69,13 +69,13 @@ class ApplicationController < ActionController::API
 
     def unhandled_error(error)
         if request.accepts.first.html?
-        raise error
+            raise error
         else
-        @message = "#{error.class} - #{error.message}"
-        @stack = Rails::BacktraceCleaner.new.clean(error.backtrace)
-        render 'api/errors/internal_server_error', status: :internal_server_error
+            @message = "#{error.class} - #{error.message}"
+            @stack = Rails::BacktraceCleaner.new.clean(error.backtrace)
+            render 'api/errors/internal_server_error', status: :internal_server_error
 
-        logger.error "\n#{@message}:\n\t#{@stack.join("\n\t")}\n"
+            logger.error "\n#{@message}:\n\t#{@stack.join("\n\t")}\n"
         end
     end
 

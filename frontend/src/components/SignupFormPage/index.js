@@ -42,11 +42,6 @@ function SignupForm() {
     <>
       <h3 className="form-title">Welcome to RHOBNB</h3>
       <form onSubmit={handleSubmit} className="signup-form">
-        <ul>
-          {errors.map((error) => (
-            <li key={error}>{error}</li>
-          ))}
-        </ul>
         <input
           type="text"
           value={first_name}
@@ -78,6 +73,11 @@ function SignupForm() {
           placeholder="Password"
           required
         />
+        <ul className="form-errors">
+          {errors.map((error) => (
+            <li key={error}>{error}</li>
+          ))}
+        </ul>
 
         <button type="submit">Sign Up</button>
       </form>
