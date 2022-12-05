@@ -1,0 +1,28 @@
+.session-dropdown-button {
+    padding: 5px 5px 5px 12px;
+    background: transparent;
+    cursor: pointer;
+    margin-right: 60px;
+    text-align: inherit;
+    /* background-color: var(--f-mkcy-f); */
+    border: 1px solid rgb(188, 188, 188);
+    border-radius: 21px;
+    transition: box-shadow 0.2s ease;
+    height: 42px;
+    width: 77px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.session-dropdown-button > i {
+    height: 16px;
+    width: 16px;
+    font-size: 16px;
+    margin: 2px;
+    color: rgb(99, 99, 99);
+}
+
+.whole-profile-nav {
+    margin-right: 60px;
+}

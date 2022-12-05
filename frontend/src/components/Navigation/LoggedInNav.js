@@ -30,28 +30,30 @@ function LoggedInNav() {
 
   return (
     <>
-      <button onClick={openMenu}>
-        <i className="fa-solid fa-user-circle" />
-        <i className="fa-solid fa-bars" />
-      </button>
-      {showMenu && (
-        <ul className="profile-dropdown">
-          <div className="bold-dropdown-options">
-            <li>Messages</li>
-            <li>Trips</li>
-            <li>Wishlists</li>
-          </div>
-          <li>
-            <a href="https://github.com/cathanderson">Help</a>
-          </li>
-          <li>
-            <a href="https://en.wikipedia.org/wiki/The_Real_Housewives">
-              Learn more about the Real Housewives
-            </a>
-          </li>
-          <li onClick={logout}>Log Out</li>
-        </ul>
-      )}
+      <div className="whole-profile-nav">
+        <button onClick={openMenu} className="session-dropdown-button">
+          <i className="fa-solid fa-bars" />
+          <i className="fa-solid fa-user-circle" />
+        </button>
+        {showMenu && (
+          <ul className="profile-dropdown">
+            <div className="bold-dropdown-options">
+              <li>Messages</li>
+              <li>Trips</li>
+              <li>Wishlists</li>
+            </div>
+            <li>
+              <a href="https://github.com/cathanderson">Help</a>
+            </li>
+            <li>
+              <a href="https://en.wikipedia.org/wiki/The_Real_Housewives">
+                Learn more about <br></br>the Real Housewives
+              </a>
+            </li>
+            <li onClick={logout}>Log Out</li>
+          </ul>
+        )}
+      </div>
     </>
   );
 }
