@@ -37,11 +37,11 @@ function LoggedInNav() {
         </button>
         {showMenu && (
           <ul className="profile-dropdown">
-            <div className="bold-dropdown-options">
+            {/* <div className="bold-dropdown-options"> */}
               <li>Messages</li>
               <li>Trips</li>
               <li>Wishlists</li>
-            </div>
+            {/* </div> */}
             <li>
               <a href="https://github.com/cathanderson">Help</a>
             </li>
@@ -50,7 +50,7 @@ function LoggedInNav() {
                 Learn more about <br></br>the Real Housewives
               </a>
             </li>
-            <li onClick={logout}>Log Out</li>
+            <li onClick={logout}>Log out</li>
           </ul>
         )}
       </div>
