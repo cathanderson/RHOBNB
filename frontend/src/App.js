@@ -8,9 +8,9 @@ function App() {
     <>
       <Navigation/>
         <Switch>
-          <Route path="/signup">
+          {/* <Route path="/signup">
             <SignupFormPage />
-          </Route>
+          </Route> */}
         </Switch>
     </>
   );

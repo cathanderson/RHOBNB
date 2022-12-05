@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import LoginFormModal from "../LoginFormModal/LoginForm";
 import { Modal } from "../../context/Modal";
 import LoginForm from "../LoginFormModal/LoginForm";
+import SignupForm from "../SignupFormPage";
 
 function LoggedOutNav() {
   const [showMenu, setShowMenu] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showSignupModal, setShowSignupModal] = useState(false);
   const openMenu = () => {
     if (showMenu) return;
     setShowMenu(true);
@@ -34,8 +35,11 @@ function LoggedOutNav() {
           <li>
             <button onClick={() => setShowLoginModal(true)}>Log In</button>
           </li>
-          <li>
+          {/* <li>
             <NavLink to="/signup">Sign Up</NavLink>
+          </li> */}
+          <li>
+            <button onClick={() => setShowSignupModal(true)}>Signup</button>
           </li>
           <li>
             <a href="https://github.com/cathanderson">Help</a>
@@ -50,6 +54,11 @@ function LoggedOutNav() {
       {showLoginModal && (
         <Modal onClose={() => setShowLoginModal(false)}>
           <LoginForm />
+        </Modal>
+      )}
+      {showSignupModal && (
+        <Modal onClose={() => setShowSignupModal(false)}>
+          <SignupForm />
         </Modal>
       )}
       {/* {showModal && <LoginFormModal />} */}
