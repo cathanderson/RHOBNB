@@ -32,6 +32,7 @@ function LoggedInNav() {
     <>
       <button onClick={openMenu}>
         <i className="fa-solid fa-user-circle" />
+        <i className="fa-solid fa-bars" />
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
@@ -48,9 +49,7 @@ function LoggedInNav() {
               Learn more about the Real Housewives
             </a>
           </li>
-          <li>
-            <button onClick={logout}>Log Out</button>
-          </li>
+          <li onClick={logout}>Log Out</li>
         </ul>
       )}
     </>

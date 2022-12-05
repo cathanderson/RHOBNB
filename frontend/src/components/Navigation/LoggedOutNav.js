@@ -28,19 +28,13 @@ function LoggedOutNav() {
   return (
     <>
       <button onClick={openMenu}>
+        <i className="fa-solid fa-bars" />
         <i className="fa-solid fa-user-circle" />
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
-          <li>
-            <button onClick={() => setShowLoginModal(true)}>Log In</button>
-          </li>
-          {/* <li>
-            <NavLink to="/signup">Sign Up</NavLink>
-          </li> */}
-          <li>
-            <button onClick={() => setShowSignupModal(true)}>Signup</button>
-          </li>
+          <li onClick={() => setShowLoginModal(true)}>Log In</li>
+          <li onClick={() => setShowSignupModal(true)}>Signup</li>
           <li>
             <a href="https://github.com/cathanderson">Help</a>
           </li>
