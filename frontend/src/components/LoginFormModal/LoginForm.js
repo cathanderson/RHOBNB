@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import * as sessionActions from "../../store/session";
-import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import "./LoginForm.css";
 
-function LoginFormPage() {
+function LoginForm() {
   const dispatch = useDispatch();
-  const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errors, setErrors] = useState([]);
-
-  if (sessionUser) return <Redirect to="/" />;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -20,10 +16,9 @@ function LoginFormPage() {
       async (res) => {
         let data;
         try {
-          // .clone() essentially allows you to read the response body twice
           data = await res.clone().json();
         } catch {
-          data = await res.text(); // Will hit this case if the server is down
+          data = await res.text(); 
         }
         if (data?.errors) setErrors(data.errors);
         else if (data) setErrors([data]);
@@ -33,7 +28,7 @@ function LoginFormPage() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="login-form">
       <ul>
         {errors.map((error) => (
           <li key={error}>{error}</li>
@@ -62,4 +57,4 @@ function LoginFormPage() {
   );
 }
 
-export default LoginFormPage;
+export default LoginForm;

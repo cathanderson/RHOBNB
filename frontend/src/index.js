@@ -7,16 +7,19 @@ import { Provider } from "react-redux";
 import configureStore from "./store/index";
 import csrfFetch from "./store/csrf";
 import * as sessionActions from "./store/session";
+import { ModalProvider } from "./context/Modal";
 
 const store = configureStore();
 
 function Root() {
   return (
-    <Provider store={store}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </Provider>
+    <ModalProvider>
+      <Provider store={store}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </Provider>
+    </ModalProvider>
   );
 }
 

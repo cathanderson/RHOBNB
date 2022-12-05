@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
+// import LoginFormModal from "../LoginFormModal/LoginForm";
 
 function LoggedOutNav() {
   const [showMenu, setShowMenu] = useState(false);
@@ -28,9 +29,9 @@ function LoggedOutNav() {
       </button>
       {showMenu && (
         <ul className="profile-dropdown">
-          <li>
-            <NavLink to="/login">Log In</NavLink>
-          </li>
+          {/* <li>
+            <LoginFormModal />
+          </li> */}
           <li>
             <NavLink to="/signup">Sign Up</NavLink>
           </li>
