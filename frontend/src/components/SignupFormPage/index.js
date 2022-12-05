@@ -39,50 +39,49 @@ function SignupForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map((error) => (
-          <li key={error}>{error}</li>
-        ))}
-      </ul>
-      <label>
-        First name
+    <>
+      <h3 className="form-title">Welcome to RHOBNB</h3>
+      <form onSubmit={handleSubmit} className="signup-form">
+        <ul>
+          {errors.map((error) => (
+            <li key={error}>{error}</li>
+          ))}
+        </ul>
         <input
           type="text"
           value={first_name}
           onChange={(e) => setFirstName(e.target.value)}
+          placeholder="First name"
           required
         />
-      </label>
-      <label>
-        Last name
+
         <input
           type="text"
           value={last_name}
           onChange={(e) => setLastName(e.target.value)}
+          placeholder="Last name"
           required
         />
-      </label>
-      <label>
-        Email
+
         <input
           type="text"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          placeholder="Email"
           required
         />
-      </label>
-      <label>
-        Password
+
         <input
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
           required
         />
-      </label>
-      <button type="submit">Sign Up</button>
-    </form>
+
+        <button type="submit">Sign Up</button>
+      </form>
+    </>
   );
 }
 

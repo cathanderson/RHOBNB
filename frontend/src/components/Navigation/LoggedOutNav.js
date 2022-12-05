@@ -62,6 +62,14 @@ function LoggedOutNav() {
       )}
       {showSignupModal && (
         <Modal onClose={() => setShowSignupModal(false)}>
+          <header className="modal-header">
+            <i
+              onClick={() => setShowSignupModal(false)}
+              className="fa-solid fa-x"
+            />
+            <h3 className="modal-title">Sign up</h3>
+            <p> </p>
+          </header>
           <SignupForm />
         </Modal>
       )}
