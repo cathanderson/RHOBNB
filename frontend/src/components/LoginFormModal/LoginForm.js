@@ -43,7 +43,7 @@ function LoginForm() {
       email: "demo@rhobnb.com",
       password: "password",
     };
-    dispatch(sessionActions.login({ demoUser }));
+    dispatch(sessionActions.login(demoUser));
   };
 
   return (
@@ -71,7 +71,7 @@ function LoginForm() {
         </ul>
         <button type="submit">Log in</button>
       </form>
-      {/* <button className="demo-user-login-button" onClick={loginDemo}>Log in as Demo User</button> */}
+      <button className="demo-user-login-button" onClick={loginDemo}>Log in as Demo User</button>
     </>
   );
 }

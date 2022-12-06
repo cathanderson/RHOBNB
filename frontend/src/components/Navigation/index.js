@@ -18,8 +18,11 @@ function Navigation() {
   //LOGIN FORM MODAL SHOULDN'T BE IN THIS COMPONENT, NEEDS TO BE IN LOGGED IN NAV COMPONENT
   return (
     <>
-      { sessionNav }
-      {/* <LoginFormModal/>  */}
+      <nav className="main-nav">
+        <h1 className="app-title">rhobnb</h1>
+        {sessionNav}
+        {/* <LoginFormModal/>  */}
+      </nav>
     </>
   );
 }

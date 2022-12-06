@@ -34,8 +34,18 @@ function LoggedOutNav() {
         </button>
         {showMenu && (
           <ul className="profile-dropdown">
-            <li onClick={() => setShowLoginModal(true)}>Log in</li>
-            <li onClick={() => setShowSignupModal(true)}>Sign up</li>
+            <li
+              className="clickable-option"
+              onClick={() => setShowLoginModal(true)}
+            >
+              Log in
+            </li>
+            <li
+              className="clickable-option"
+              onClick={() => setShowSignupModal(true)}
+            >
+              Sign up
+            </li>
             <li>
               <a href="https://github.com/cathanderson">Help</a>
             </li>
