@@ -4,6 +4,7 @@ import LoggedInNav from "./LoggedInNav";
 import LoggedOutNav from "./LoggedOutNav";
 import "./Navigation.css";
 import LoginFormModal from "../LoginFormModal";
+import NavSearch from "./NavSearch.js";
 
 function Navigation() {
   const sessionUser = useSelector((state) => state.session.user);
@@ -20,6 +21,7 @@ function Navigation() {
     <>
       <nav className="main-nav">
         <h1 className="app-title">rhobnb</h1>
+        < NavSearch />
         {sessionNav}
         {/* <LoginFormModal/>  */}
       </nav>
