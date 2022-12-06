@@ -10,10 +10,12 @@ ActiveRecord::Base.transaction do
 
     puts "Destroying existing tables..."
     User.destroy_all
+    Property.destroy_all
 
 
     puts "Resetting primary keys..."
     ActiveRecord::Base.connection.reset_pk_sequence!('users')
+    ActiveRecord::Base.connection.reset_pk_sequence!('properties')
 
 
     puts "Creating users..."
@@ -26,6 +28,22 @@ ActiveRecord::Base.transaction do
     ramona = User.create!(email: 'ramona@rhobnb.com', password: 'password', first_name: 'ramona', last_name: 'singer', rh_franchise: "rhony")
     carole = User.create!(email: 'carole@rhobnb.com', password: 'password', first_name: 'carole', last_name: 'radziwill', rh_franchise: "rhony")
     jenna = User.create!(email: 'jenna@rhobnb.com', password: 'password', first_name: 'jenna', last_name: 'lyons', rh_franchise: "rhony")
+
+
+    puts "Creating properties..."
+    dorinda_ues = Property.create!({
+        host_id: dorinda.id,
+        host_name: 'Dorinda'
+        property_name: 'Dorinda\’s Upper East Side Apartment',
+        description: 'This apartment gives uptown a whole new attitude.', 
+        city: 'New York',
+        state: 'New York',
+        price: 400,
+        num_beds: 2,
+        num_baths: 2,
+        lng: -73.960049758828,
+        lat: 40.77815664730208
+    })
 
     puts "Done!"
 end
