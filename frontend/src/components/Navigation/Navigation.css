@@ -1,0 +1,72 @@
+.session-dropdown-button {
+    padding: 5px 5px 5px 12px;
+    background: transparent;
+    cursor: pointer;
+    margin-right: 60px;
+    margin-left: 170px;
+    text-align: inherit;
+    /* background-color: var(--f-mkcy-f); */
+    border: 1px solid rgb(188, 188, 188);
+    border-radius: 21px;
+    transition: box-shadow 0.2s ease;
+    height: 42px;
+    width: 77px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.session-dropdown-button:hover {
+    box-shadow: 2px 3px 2px rgb(214, 214, 214);
+}
+
+.session-dropdown-button > i {
+    height: 16px;
+    width: 16px;
+    font-size: 16px;
+    margin: 2px;
+    color: rgb(99, 99, 99);
+}
+
+/* .whole-profile-nav {
+    margin-right: 60px;
+} */
+
+.profile-dropdown {
+        display: flex;
+        position: absolute;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 150px;
+        width: 230px;
+        border-radius: 10px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        border: 1px solid rgb(188, 188, 188);
+        margin-top: 8px;
+        box-shadow: 2px 3px 2px rgb(230, 230, 230);
+}
+
+.clickable-option {
+    cursor: pointer;
+}
+
+.main-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.app-title {
+    font-weight: 600;
+    font-size: 30px;
+    margin: 20px;
+    letter-spacing: -2px;
+    color: rgb(239, 18, 92);
+ }
+
