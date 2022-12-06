@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   post 'api/test', to: 'application#test'
 
   namespace :api, defaults: {format: :json} do
-    # ...
     resources :users, only: [:create]
     resource :session, only: [:create, :show, :destroy]
+    resources :properties, only: [:index, :show]
   end
 
   # make sure this is below other rotes

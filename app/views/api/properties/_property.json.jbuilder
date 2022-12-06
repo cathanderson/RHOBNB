@@ -1,0 +1,13 @@
+json.extract! property,  
+            :id,
+            :city,
+            :description,
+            :host_name,
+            :lat,
+            :lng,
+            :num_baths,
+            :num_beds,
+            :price,
+            :property_name,
+            :state,
+            :host_id  

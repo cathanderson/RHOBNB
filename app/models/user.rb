@@ -33,7 +33,9 @@ class User < ApplicationRecord
 
   # has_many :reservations,
   #   dependent: :destroy
-  # has_many :listings,
+  # has_many :properties,
+  #   class_name: :Property,
+  #   foreign_key: :host_id
   #   dependent: :destroy
   # has_many :reviews,
   #     dependent: :destroy

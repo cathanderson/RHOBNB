@@ -29,7 +29,6 @@ function LoginForm() {
         else if (data) setErrors([data]);
         else setErrors([res.statusText]);
       }
-
     );
     // dispatch(sessionActions.login({ email, password }))
     //   .then((res) => console.log(res))
@@ -71,7 +70,9 @@ function LoginForm() {
         </ul>
         <button type="submit">Log in</button>
       </form>
-      <button className="demo-user-login-button" onClick={loginDemo}>Log in as Demo User</button>
+      <button className="demo-user-login-button" onClick={loginDemo}>
+        Log in as Demo User
+      </button>
     </>
   );
 }
