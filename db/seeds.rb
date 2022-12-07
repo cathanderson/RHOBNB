@@ -34,12 +34,12 @@ ActiveRecord::Base.transaction do
     jenna = User.create!(email: 'jenna@rhobnb.com', password: 'password', first_name: 'Jenna', last_name: 'Lyons', rh_franchise: "rhony")
 
     # RHONJ WIVES
-    # teresa = User.create!(email: 'teresa@rhobnb.com', password: 'password', first_name: 'Teresa', last_name: 'Giudice', rh_franchise: "rhonj")
-    # melissa = User.create!(email: 'melissa@rhobnb.com', password: 'password', first_name: 'Melissa', last_name: 'Gorga', rh_franchise: "rhonj")
-    # margaret = User.create!(email: 'margaret@rhobnb.com', password: 'password', first_name: 'Margaret', last_name: 'Josephs', rh_franchise: "rhonj")
-    # jennifer = User.create!(email: 'jennifer@rhobnb.com', password: 'password', first_name: 'Jennifer', last_name: 'Aydin', rh_franchise: "rhonj")
-    # jackie = User.create!(email: 'jackie@rhobnb.com', password: 'password', first_name: 'Jackie', last_name: 'Goldschneider', rh_franchise: "rhonj")
-    # dolores = User.create!(email: 'dolores@rhobnb.com', password: 'password', first_name: 'Dolores', last_name: 'Catania', rh_franchise: "rhonj")
+    teresa = User.create!(email: 'teresa@rhobnb.com', password: 'password', first_name: 'Teresa', last_name: 'Giudice', rh_franchise: "rhonj")
+    melissa = User.create!(email: 'melissa@rhobnb.com', password: 'password', first_name: 'Melissa', last_name: 'Gorga', rh_franchise: "rhonj")
+    margaret = User.create!(email: 'margaret@rhobnb.com', password: 'password', first_name: 'Margaret', last_name: 'Josephs', rh_franchise: "rhonj")
+    jennifer = User.create!(email: 'jennifer@rhobnb.com', password: 'password', first_name: 'Jennifer', last_name: 'Aydin', rh_franchise: "rhonj")
+    jackie = User.create!(email: 'jackie@rhobnb.com', password: 'password', first_name: 'Jackie', last_name: 'Goldschneider', rh_franchise: "rhonj")
+    dolores = User.create!(email: 'dolores@rhobnb.com', password: 'password', first_name: 'Dolores', last_name: 'Catania', rh_franchise: "rhonj")
 
     # RHOBH WIVES
     # kyle = User.create!(email: 'kyle@rhobnb.com', password: 'password', first_name: 'Kyle', last_name: 'Richards', rh_franchise: "rhobh")
@@ -61,7 +61,7 @@ ActiveRecord::Base.transaction do
 
     # RHOA WIVES  
     # nene = User.create!(email: 'nene@rhobnb.com', password: 'password', first_name: 'Nene', last_name: 'Leakes', rh_franchise: "rhoa")
-    # porsha = User.create!(email: 'porsha@rhobnb.com', password: 'password', first_name: 'Porsha', last_name: 'Williams', rh_franchise: "rhoa")
+    # sheree = User.create!(email: 'sheree@rhobnb.com', password: 'password', first_name: 'Sheree', last_name: 'Whitfield', rh_franchise: "rhoa")
     
 
     puts "Creating properties..."
@@ -127,7 +127,7 @@ ActiveRecord::Base.transaction do
     carole_soho = Property.create!({
         host_id: carole.id,
         host_name: 'Carole',
-        property_name: 'Carole’s Soho Loft',
+        property_name: 'Carole’s Soho Duplex',
         description: "This home is fit for a princess, but not a drama queen. If you're in the mood to dine in, the hostess has a private 28-year-old chef on speed dial.", 
         city: 'New York',
         state: 'New York',
@@ -154,175 +154,175 @@ ActiveRecord::Base.transaction do
 
     # NON-MANHATTAN RHONY PROPERTIES --- commenting out for now, will expand later when ready to do more with maps
 
-    # dorinda_bm = Property.create!({
-    #     host_id: dorinda.id,
-    #     host_name: 'Dorinda',
-    #     property_name: 'Bluestone Manor',
-    #     description: "Come make it nice in the Berkshires with Dorinda! Perfect your next Ultimate Girls' trip.", 
-    #     city: 'Great Barrington',
-    #     state: 'Massachusetts',
-    #     price: 740,
-    #     num_beds: 8,
-    #     num_baths: 6,
-    #     lng: -73.36305352490433,
-    #     lat: 42.19511044847477
-    # })
+    dorinda_bm = Property.create!({
+        host_id: dorinda.id,
+        host_name: 'Dorinda',
+        property_name: 'Bluestone Manor',
+        description: "Come make it nice in the Berkshires with Dorinda! Perfect your next Ultimate Girls' trip.", 
+        city: 'Great Barrington',
+        state: 'Massachusetts',
+        price: 740,
+        num_beds: 8,
+        num_baths: 6,
+        lng: -73.36305352490433,
+        lat: 42.19511044847477
+    })
 
-    # bethenny_montauk = Property.create!({
-    #     host_id: bethenny.id,
-    #     host_name: 'Bethenny',
-    #     property_name: 'Bethenny’s Montauk Home',
-    #     description: "Mention it all during your stay at Bethenny’s beach house. Steps from Montauk Hwy.", 
-    #     city: 'Montauk',
-    #     state: 'New York',
-    #     price: 610,
-    #     num_beds: 5,
-    #     num_baths: 5,
-    #     lng: -71.97444877105724,
-    #     lat: 41.030743122000054
-    # })
+    bethenny_montauk = Property.create!({
+        host_id: bethenny.id,
+        host_name: 'Bethenny',
+        property_name: 'Bethenny’s Montauk Home',
+        description: "Mention it all during your stay at Bethenny’s beach house. Steps from Montauk Hwy.", 
+        city: 'Montauk',
+        state: 'New York',
+        price: 610,
+        num_beds: 5,
+        num_baths: 5,
+        lng: -71.97444877105724,
+        lat: 41.030743122000054
+    })
 
-    # luann_sag = Property.create!({
-    #     host_id: bethenny.id,
-    #     host_name: 'Luann',
-    #     property_name: "Luann's Sag Harbor Home",
-    #     description: "If you can’t be cool, you can’t be with the Countess at this beautiful home in Sag Harbor.", 
-    #     city: 'Sag Harbor',
-    #     state: 'New York',
-    #     price: 620,
-    #     num_beds: 5,
-    #     num_baths: 4,
-    #     lng: -72.30727134448259,
-    #     lat: 40.991528845249796
-    # })
+    luann_sag = Property.create!({
+        host_id: bethenny.id,
+        host_name: 'Luann',
+        property_name: "Luann's Sag Harbor Home",
+        description: "If you can’t be cool, you can’t be with the Countess at this beautiful home in Sag Harbor.", 
+        city: 'Sag Harbor',
+        state: 'New York',
+        price: 620,
+        num_beds: 5,
+        num_baths: 4,
+        lng: -72.30727134448259,
+        lat: 40.991528845249796
+    })
 
     # RHONJ PROPERTIES
 
-    # teresa_old = Property.create!({
-    #     host_id: teresa.id,
-    #     host_name: 'Teresa',
-    #     property_name: 'Giudice Family Home',
-    #     description: "Live like one of Jersey’s favorite families. Just don’t bring sprinkle cookies or use analogies during your stay…", 
-    #     city: 'Montville',
-    #     state: 'New Jersey',
-    #     price: 420,
-    #     num_beds: 8,
-    #     num_baths: 10,
-    #     lng: -74.35093834037811,
-    #     lat: 40.89743042253925
-    # })
+    teresa_old = Property.create!({
+        host_id: teresa.id,
+        host_name: 'Teresa',
+        property_name: 'Giudice Family Home',
+        description: "Live like one of Jersey’s favorite families. Just don’t bring sprinkle cookies or use analogies during your stay…", 
+        city: 'Montville',
+        state: 'New Jersey',
+        price: 420,
+        num_beds: 8,
+        num_baths: 10,
+        lng: -74.35093834037811,
+        lat: 40.89743042253925
+    })
 
-    # teresa_new = Property.create!({
-    #     host_id: teresa.id,
-    #     host_name: 'Teresa',
-    #     property_name: "Teresa and Louie’s Home",
-    #     description: "Jersey’s original love bubble! Pineapple snacks included in guest welcome package.", 
-    #     city: 'Montville',
-    #     state: 'New Jersey',
-    #     price: 400,
-    #     num_beds: 9,
-    #     num_baths: 10,
-    #     lng: -74.36053861424165,
-    #     lat: 40.88492304356958
-    # })
+    teresa_new = Property.create!({
+        host_id: teresa.id,
+        host_name: 'Teresa',
+        property_name: "Teresa and Louie’s Home",
+        description: "Jersey’s original love bubble! Pineapple snacks included in guest welcome package.", 
+        city: 'Montville',
+        state: 'New Jersey',
+        price: 400,
+        num_beds: 9,
+        num_baths: 10,
+        lng: -74.36053861424165,
+        lat: 40.88492304356958
+    })
 
-    # melissa_old = Property.create!({
-    #     host_id: melissa.id,
-    #     host_name: 'Melissa',
-    #     property_name: "Gorga Family Home",
-    #     description: "Sprinkle cookies welcome. A short car ride from Melissa’s Envy Boutique.", 
-    #     city: 'Montville',
-    #     state: 'New Jersey',
-    #     price: 380,
-    #     num_beds: 7,
-    #     num_baths: 6,
-    #     lng: -74.34583181172727,
-    #     lat: 40.90870047917728
-    # })
+    melissa_old = Property.create!({
+        host_id: melissa.id,
+        host_name: 'Melissa',
+        property_name: "Gorga Family Home",
+        description: "Sprinkle cookies welcome. A short car ride from Melissa’s Envy Boutique.", 
+        city: 'Montville',
+        state: 'New Jersey',
+        price: 380,
+        num_beds: 7,
+        num_baths: 6,
+        lng: -74.34583181172727,
+        lat: 40.90870047917728
+    })
 
-    # margaret_englewood = Property.create!({
-    #     host_id: margaret.id,
-    #     host_name: 'Margaret',
-    #     property_name: "Margaret and Joe B's Home",
-    #     description: "This newly renovated home with chic and unique finishes brings the power, the pigtails, and the party.", 
-    #     city: 'Englewood',
-    #     state: 'New Jersey',
-    #     price: 350,
-    #     num_beds: 5,
-    #     num_baths: 5,
-    #     lng: -73.98726426522768,
-    #     lat: 40.899049181184026
-    # })
+    margaret_englewood = Property.create!({
+        host_id: margaret.id,
+        host_name: 'Margaret',
+        property_name: "Margaret and Joe B's Home",
+        description: "This newly renovated home with chic and unique finishes brings the power, the pigtails, and the party.", 
+        city: 'Englewood',
+        state: 'New Jersey',
+        price: 350,
+        num_beds: 5,
+        num_baths: 5,
+        lng: -73.98726426522768,
+        lat: 40.899049181184026
+    })
 
-    # jennifer_paramus = Property.create!({
-    #     host_id: jennifer.id,
-    #     host_name: 'Jennifer',
-    #     property_name: "Aydin Family Home",
-    #     description: "Whoever says 'money can’t buy happiness' clearly has never stepped inside a house like this one. A quick drive to the Garden State Plaza Mall and the Aydin Center For Plastic Surgery.", 
-    #     city: 'Paramus',
-    #     state: 'New Jersey',
-    #     price: 710,
-    #     num_beds: 14,
-    #     num_baths: 12,
-    #     lng: -74.05789040375126,
-    #     lat: 40.94335670901671
-    # })
+    jennifer_paramus = Property.create!({
+        host_id: jennifer.id,
+        host_name: 'Jennifer',
+        property_name: "Aydin Family Home",
+        description: "Whoever says 'money can’t buy happiness' clearly has never stepped inside a house like this one. A quick drive to the Garden State Plaza Mall and the Aydin Center For Plastic Surgery.", 
+        city: 'Paramus',
+        state: 'New Jersey',
+        price: 710,
+        num_beds: 14,
+        num_baths: 12,
+        lng: -74.05789040375126,
+        lat: 40.94335670901671
+    })
 
-    # jackie_tenafly = Property.create!({
-    #     host_id: jackie.id,
-    #     host_name: 'Jackie',
-    #     property_name: "Goldschneider Family Home",
-    #     description: "Home to four kids, two(+) degrees, and one kickass life. Analogy usage welcome.", 
-    #     city: 'Tenafly',
-    #     state: 'New Jersey',
-    #     price: 410,
-    #     num_beds: 5,
-    #     num_baths: 4,
-    #     lng: -73.95268060614677,
-    #     lat: 40.9275297417456
-    # })
+    jackie_tenafly = Property.create!({
+        host_id: jackie.id,
+        host_name: 'Jackie',
+        property_name: "Goldschneider Family Home",
+        description: "Home to four kids, two(+) degrees, and one kickass life. Analogy usage welcome.", 
+        city: 'Tenafly',
+        state: 'New Jersey',
+        price: 410,
+        num_beds: 5,
+        num_baths: 4,
+        lng: -73.95268060614677,
+        lat: 40.9275297417456
+    })
 
-    # dolores_montvale = Property.create!({
-    #     host_id: dolores.id,
-    #     host_name: 'Dolores',
-    #     property_name: "Dolores' Townhouse",
-    #     description: "This home doesn’t start the drama, but it does stop the show.", 
-    #     city: 'Montvale',
-    #     state: 'New Jersey',
-    #     price: 350,
-    #     num_beds: 4,
-    #     num_baths: 4,
-    #     lng: -74.02188204669346,
-    #     lat: 41.04418141423029
-    # })
+    dolores_montvale = Property.create!({
+        host_id: dolores.id,
+        host_name: 'Dolores',
+        property_name: "Dolores' Townhouse",
+        description: "This home doesn’t start the drama, but it does stop the show.", 
+        city: 'Montvale',
+        state: 'New Jersey',
+        price: 350,
+        num_beds: 4,
+        num_baths: 4,
+        lng: -74.02188204669346,
+        lat: 41.04418141423029
+    })
 
-    # gorgas_shore = Property.create!({
-    #     host_id: melissa.id,
-    #     host_name: 'Melissa',
-    #     property_name: "Gorgas’ Shore House",
-    #     description: "Book your stay here and enjoy a trip to the shore that most girls only dream of.", 
-    #     city: "Tom’s River",
-    #     state: 'New Jersey',
-    #     price: 400,
-    #     num_beds: 6,
-    #     num_baths: 5,
-    #     lng: -74.11964209476538,
-    #     lat: 39.9645315807124
-    # })
+    gorgas_shore = Property.create!({
+        host_id: melissa.id,
+        host_name: 'Melissa',
+        property_name: "Gorgas’ Shore House",
+        description: "Book your stay here and enjoy a trip to the shore that most girls only dream of.", 
+        city: "Tom’s River",
+        state: 'New Jersey',
+        price: 400,
+        num_beds: 6,
+        num_baths: 5,
+        lng: -74.11964209476538,
+        lat: 39.9645315807124
+    })
 
-    # jackie_westhampton = Property.create!({
-    #     host_id: jackie.id,
-    #     host_name: 'Jackie',
-    #     property_name: "Jackie’s Hamptons Getaway",
-    #     description: "You don’t have to pay this home a compliment, but you do have to pay it respect.", 
-    #     city: 'Westhampton',
-    #     state: 'New York',
-    #     price: 410,
-    #     num_beds: 6,
-    #     num_baths: 6,
-    #     lng: -72.68381786763742,
-    #     lat: 40.81788767599051
-    # })
+    jackie_westhampton = Property.create!({
+        host_id: jackie.id,
+        host_name: 'Jackie',
+        property_name: "Jackie’s Hamptons Getaway",
+        description: "You don’t have to pay this home a compliment, but you do have to pay it respect.", 
+        city: 'Westhampton',
+        state: 'New York',
+        price: 410,
+        num_beds: 6,
+        num_baths: 6,
+        lng: -72.68381786763742,
+        lat: 40.81788767599051
+    })
 
     puts "Done!"
 end
