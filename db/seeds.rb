@@ -71,7 +71,7 @@ ActiveRecord::Base.transaction do
     dorinda_ues = Property.create!({
         host_id: dorinda.id,
         host_name: 'Dorinda',
-        property_name: 'Dorinda’s Upper East Side Apartment',
+        property_name: 'Dorinda’s UES Apartment',
         description: 'This apartment gives uptown a whole new attitude. Steps from the Met, a short cab ride to Jovani NYC, and a 2.5 hour ride to the Berkshires.', 
         city: 'New York',
         state: 'New York',
@@ -85,7 +85,7 @@ ActiveRecord::Base.transaction do
     sonja_townhouse = Property.create!({
         host_id: sonja.id,
         host_name: 'Sonja',
-        property_name: 'Sonja’s Upper East Side Townhouse',
+        property_name: 'Sonja’s UES Townhouse',
         description: "…There’s nothing grey about these gardens. All kinds of fun welcome, just make sure you don't touch the f*cking Morgan Letters.", 
         city: 'New York',
         state: 'New York',
@@ -113,7 +113,7 @@ ActiveRecord::Base.transaction do
     ramona_ues = Property.create!({
         host_id: ramona.id,
         host_name: 'Ramona',
-        property_name: 'Ramona’s Upper East Side Apartment',
+        property_name: 'Ramona’s UES Apartment',
         description: "This apartment is an acquired taste. You don’t like it? Acquire some taste! A hop, skip, and a jump from Bergdorf's and Trump Tower.", 
         city: 'New York',
         state: 'New York',
@@ -313,7 +313,7 @@ ActiveRecord::Base.transaction do
     # jackie_westhampton = Property.create!({
     #     host_id: jackie.id,
     #     host_name: 'Jackie',
-    #     property_name: "Jackie’s Getaway in the Hamptons",
+    #     property_name: "Jackie’s Hamptons Getaway",
     #     description: "You don’t have to pay this home a compliment, but you do have to pay it respect.", 
     #     city: 'Westhampton',
     #     state: 'New York',
