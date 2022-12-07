@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProperty } from "../../store/properties";
@@ -10,14 +10,6 @@ function PropertyShowPage() {
   const { id } = useParams();
 
   const property = useSelector((state) => state.properties[id]);
-
-  useEffect(() => {
-    dispatch(fetchProperty(id));
-  }, [id, dispatch]);
-
-  if (!property) {
-    return null;
-  }
 
   const {
     city,
@@ -32,6 +24,31 @@ function PropertyShowPage() {
     state,
   } = property;
 
+  useEffect(() => {
+    dispatch(fetchProperty(id));
+  }, [id, dispatch]);
+
+  if (!property) {
+    return null;
+  }
+
+  let bedDetails;
+  if (numBeds === 1) {
+    bedDetails = <span>{numBeds} bed</span>;
+  } else {
+    bedDetails = <span>{numBeds} beds</span>;
+  }
+
+  let bathDetails;
+  if (numBaths === 1) {
+    bathDetails = <span>{numBaths} bath</span>;
+  } else {
+    bathDetails = <span>{numBaths} beds</span>;
+  }
+
+  const splitPropertyName = propertyName.split(" ")
+  const propertyType = splitPropertyName[splitPropertyName.length - 1]
+
   return (
     <div className="property-show">
       <div className="show-page-info-container">
@@ -42,21 +59,21 @@ function PropertyShowPage() {
           <li className="show-page-city-state-us">
             {city}, {state}, United States
           </li>
-          <li className="show-page-hosted-by">Home hosted by {hostName}</li>
+          <li className="show-page-hosted-by">{propertyType} hosted by {hostName}</li>
           <li className="show-page-room-details-container">
             <li className="show-page-num-beds-num-baths">
-              <span>{numBeds} beds</span> · <span>{numBaths} baths</span>
+              {bedDetails} · {bathDetails}
             </li>
           </li>
           <li className="show-page-description">{description}</li>
           <li className="show-page-price">
-            <span className="show-page-price-span">${price}</span>{" "}<span className="show-page-night-span">night</span>
+            <span className="show-page-price-span">${price}</span>{" "}
+            <span className="show-page-night-span">night</span>
           </li>
         </ul>
       </div>
     </div>
   );
 }
-
 
 export default PropertyShowPage;
