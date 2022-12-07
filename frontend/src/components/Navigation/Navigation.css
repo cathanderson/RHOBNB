@@ -135,3 +135,6 @@
     width: 260px;
     line-height: 27px;
 }
+#app-title-link {
+    text-decoration: none;
+}
