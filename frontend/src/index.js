@@ -8,6 +8,7 @@ import configureStore from "./store/index";
 import csrfFetch from "./store/csrf";
 import * as sessionActions from "./store/session";
 import { ModalProvider } from "./context/Modal";
+import * as propertyActions from "./store/properties";
 
 const store = configureStore();
 
@@ -27,6 +28,7 @@ if (process.env.NODE_ENV !== "production") {
   window.store = store;
   window.csrfFetch = csrfFetch;
   window.sessionActions = sessionActions;
+  window.propertyActions = propertyActions;
 }
 
 const renderApplication = () => {
