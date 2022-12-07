@@ -39,11 +39,18 @@ function PropertyShowPage() {
           <li>
             <h4 className="show-page-property-name">{propertyName}</h4>
           </li>
-          <li className="show-page-city-state">
-            {city}, {state}
+          <li className="show-page-city-state-us">
+            {city}, {state}, United States
           </li>
+          <li className="show-page-hosted-by">Home hosted by {hostName}</li>
+          <li className="show-page-room-details-container">
+            <li className="show-page-num-beds-num-baths">
+              <span>{numBeds} beds</span> · <span>{numBaths} baths</span>
+            </li>
+          </li>
+          <li className="show-page-description">{description}</li>
           <li className="show-page-price">
-            ${price} <span className="show-page-night-span">night</span>
+            <span className="show-page-price-span">${price}</span>{" "}<span className="show-page-night-span">night</span>
           </li>
         </ul>
       </div>
