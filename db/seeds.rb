@@ -33,9 +33,9 @@ ActiveRecord::Base.transaction do
     puts "Creating properties..."
     dorinda_ues = Property.create!({
         host_id: dorinda.id,
-        host_name: 'Dorinda'
-        property_name: 'Dorinda\’s Upper East Side Apartment',
-        description: 'This apartment gives uptown a whole new attitude.', 
+        host_name: 'Dorinda',
+        property_name: 'Dorinda’s Upper East Side Apartment',
+        description: 'This apartment gives uptown a whole new attitude. Steps from the Met and a short cab ride from Jovani NYC.', 
         city: 'New York',
         state: 'New York',
         price: 400,
