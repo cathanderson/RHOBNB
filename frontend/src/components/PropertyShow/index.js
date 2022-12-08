@@ -74,6 +74,7 @@ function PropertyShowPage() {
                 ></img>
                 <img
                   className="non-main-property-show-image"
+                  id="third-show-page-image"
                   src={property.photoUrls[2]}
                 ></img>
                 <img
@@ -82,6 +83,7 @@ function PropertyShowPage() {
                 ></img>
                 <img
                   className="non-main-property-show-image"
+                  id="fifth-show-page-image"
                   src={property.photoUrls[4]}
                 ></img>
               </div>

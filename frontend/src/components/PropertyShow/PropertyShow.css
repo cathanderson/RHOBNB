@@ -9,12 +9,15 @@
 .property-show-image-container {
     display: flex;
     flex-direction: row;
+    border-radius: 10px;
 }
 
 .main-property-show-image {
-    width: 400px;
-        height: 400px;
-        object-fit: cover;
+    width: 408px;
+    height: 408px;
+    object-fit: cover;
+    border-radius: 10px 0 0px 10px;
+    margin: 4px;
 }
 
 .non-main-property-show-image {
@@ -27,9 +30,21 @@
 .non-main-property-show-image-container {
     display: flex;
     flex-wrap: wrap;
-    width: 400px;
+    width: 416px;
+}
+
+#third-show-page-image {
+    border-radius: 0px 10px 0px 0px;
+}
+
+#fifth-show-page-image {
+    border-radius: 0px 0 10px 0px;
 }
 
 .show-page-description {
-    width: 800px;
+    width: 832px;
+}
+
+.non-main-property-show-image {
+    margin: 4px;
 }
