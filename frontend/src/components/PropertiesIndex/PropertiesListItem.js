@@ -24,9 +24,6 @@ function PropertiesListItem({ property }) {
       <div className="list-item-container">
         <ul className="list-item-fields">
           <li>
-            <h4 className="property-index-property-name">{propertyName}</h4>
-          </li>
-          <li>
             <img
               className="list-item-image"
               src={property.photoUrls[0]}
@@ -34,11 +31,15 @@ function PropertiesListItem({ property }) {
               alt="Main property image"
             ></img>
           </li>
+          <li>
+            <h4 className="property-index-property-name">{propertyName}</h4>
+          </li>
           <li className="property-index-city-state">
             {city}, {state}
           </li>
           <li className="property-index-price">
-            ${price} <span className="property-index-night-span">night</span>
+            <span className="property-index-price-span">${price} </span>
+            <span className="property-index-night-span">night</span>
           </li>
         </ul>
       </div>
