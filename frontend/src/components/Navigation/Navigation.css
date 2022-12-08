@@ -98,7 +98,7 @@
     transition: box-shadow 0.2s ease;
     box-shadow: 2px 2px 2px rgb(230, 230, 230);
     height: 32px;
-    width: 340px;
+    width: 298px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -127,7 +127,7 @@
 }
 .searchbar-any-wife {
     border-right: 1px solid rgb(200, 200, 200);
-    padding-right: 20px;
+    padding-right: 14px;
     color: rgb(34, 34, 34);
     font-weight: 500;
     /* margin-right: 30px; */

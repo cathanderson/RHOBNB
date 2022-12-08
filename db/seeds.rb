@@ -333,10 +333,10 @@ require "open-uri"
     dorinda_ues.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/dorinda_ues/dorinda_ues_3.png'), filename: 'dorinda_ues_3.png')
     dorinda_ues.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/dorinda_ues/dorinda_ues_4.png'), filename: 'dorinda_ues_4.png')
     dorinda_ues.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/dorinda_ues/dorinda_ues_5.png'), filename: 'dorinda_ues_5.png')
-    dorinda_ues.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/dorinda_ues/dorinda_ues_6.png'), filename: 'dorinda_ues_6.png')
-    dorinda_ues.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/dorinda_ues/dorinda_ues_7.png'), filename: 'dorinda_ues_7.png')
-    dorinda_ues.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/dorinda_ues/dorinda_ues_8.png'), filename: 'dorinda_ues_8.png')
-    dorinda_ues.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/dorinda_ues/dorinda_ues_9.png'), filename: 'dorinda_ues_9.png')
+    # dorinda_ues.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/dorinda_ues/dorinda_ues_6.png'), filename: 'dorinda_ues_6.png')
+    # dorinda_ues.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/dorinda_ues/dorinda_ues_7.png'), filename: 'dorinda_ues_7.png')
+    # dorinda_ues.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/dorinda_ues/dorinda_ues_8.png'), filename: 'dorinda_ues_8.png')
+    # dorinda_ues.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/dorinda_ues/dorinda_ues_9.png'), filename: 'dorinda_ues_9.png')
 
     
     sonja_townhouse.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/sonja_townhouse/sonja_townhouse_1.png'), filename: 'sonja_townhouse_1.png')
