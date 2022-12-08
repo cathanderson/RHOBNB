@@ -33,7 +33,7 @@ function LoggedInNav() {
       <div className="whole-profile-nav">
         <button onClick={openMenu} className="session-dropdown-button">
           <i className="fa-solid fa-bars" />
-          <i className="fa-solid fa-user-circle" />
+          <i className="fa-solid fa-user-circle"/>
         </button>
         {showMenu && (
           <ul className="profile-dropdown">
