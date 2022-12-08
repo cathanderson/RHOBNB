@@ -31,6 +31,8 @@ class Property < ApplicationRecord
 
     validates :city, :description, :host_name, :lat, :lng, :num_baths, :num_beds, :price, :property_name, :state, :host_id, presence: true
 
+    has_many_attached :photos
+    
     # belongs_to :host,
     #     class_name: :User,
     #     foreign_key: :host_id

@@ -31,6 +31,8 @@ class User < ApplicationRecord
 
   # MUST FINISH THESE BEFORE COMMENTING IN
 
+  has_one_attached :photo
+
   # has_many :reservations,
   #   dependent: :destroy
   # has_many :properties,
