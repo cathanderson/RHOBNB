@@ -4,12 +4,12 @@ import { useHistory } from "react-router-dom";
 function PropertiesListItem({ property }) {
   const {
     city,
-    description,
-    hostName,
-    lat,
-    lng,
-    numBaths,
-    numBeds,
+    // description,
+    // hostName,
+    // lat,
+    // lng,
+    // numBaths,
+    // numBeds,
     price,
     propertyName,
     state,
@@ -25,6 +25,13 @@ function PropertiesListItem({ property }) {
         <ul className="list-item-fields">
           <li>
             <h4 className="property-index-property-name">{propertyName}</h4>
+          </li>
+          <li>
+            <img
+              className="list-item-image"
+              src={property.photoUrls[0]}
+              alt="Main property image"
+            ></img>
           </li>
           <li className="property-index-city-state">
             {city}, {state}
