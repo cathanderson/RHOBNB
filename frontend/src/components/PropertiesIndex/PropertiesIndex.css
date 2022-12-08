@@ -1,0 +1,17 @@
+.list-item-image {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.properties-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.properties-list-item {
+    margin: 20px;
+}

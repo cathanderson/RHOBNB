@@ -21,7 +21,7 @@ function PropertiesListItem({ property }) {
       className={"properties-list-item"}
       onClick={() => history.push(`/properties/${property.id}`)}
     >
-      <div className="list-item-info-container">
+      <div className="list-item-container">
         <ul className="list-item-fields">
           <li>
             <h4 className="property-index-property-name">{propertyName}</h4>
@@ -30,6 +30,7 @@ function PropertiesListItem({ property }) {
             <img
               className="list-item-image"
               src={property.photoUrls[0]}
+              // src="https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_soho/bethenny_soho_1.png" // test url works!
               alt="Main property image"
             ></img>
           </li>

@@ -8,7 +8,7 @@
 
 require "open-uri"
 
-ActiveRecord::Base.transaction do
+# ActiveRecord::Base.transaction do
 
     puts "Destroying existing tables..."
     User.destroy_all
@@ -367,4 +367,4 @@ ActiveRecord::Base.transaction do
 
 
     puts "Done!"
-end
+# end
