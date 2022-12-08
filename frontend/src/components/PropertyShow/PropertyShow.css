@@ -1,5 +1,7 @@
 .property-show {
     font-family: 'Montserrat', sans-serif;
+    color: #1a1a1a;
+    letter-spacing: -0.2px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -47,4 +49,18 @@
 
 .non-main-property-show-image {
     margin: 4px;
+}
+
+.show-page-property-name {
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.5px;
+    padding-bottom: 10px;
+}
+
+.show-page-city-state-us {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: -0.3px;
+    padding-bottom: 12px;
 }
