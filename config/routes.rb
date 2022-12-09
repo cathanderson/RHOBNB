@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :show, :destroy]
     resources :properties, only: [:index, :show]
+    resources :reservations, only: [:index, :show, :create, :update, :destroy]
   end
 
   # make sure this is below other rotes
