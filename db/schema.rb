@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_08_150619) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_09_203336) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -61,6 +61,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_150619) do
     t.index ["state"], name: "index_properties_on_state"
   end
 
+  create_table "reservations", force: :cascade do |t|
+    t.integer "guest_id", null: false
+    t.integer "property_id", null: false
+    t.datetime "check_in_date", null: false
+    t.datetime "check_out_date", null: false
+    t.integer "num_guests", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["guest_id"], name: "index_reservations_on_guest_id"
+    t.index ["property_id"], name: "index_reservations_on_property_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "first_name", null: false
     t.string "last_name", null: false
@@ -78,4 +90,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_08_150619) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "properties", "users", column: "host_id"
+  add_foreign_key "reservations", "properties"
+  add_foreign_key "reservations", "users", column: "guest_id"
 end
