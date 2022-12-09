@@ -84,135 +84,135 @@ require "open-uri"
         lat: 40.77815664730208
     })
 
-    # sonja_townhouse = Property.create!({
-    #     host_id: sonja.id,
-    #     host_name: 'Sonja',
-    #     property_name: 'Sonja’s UES Townhouse',
-    #     description: "…There’s nothing grey about these gardens. All kinds of fun welcome, just make sure you don't touch the f*cking Morgan Letters.", 
-    #     city: 'New York',
-    #     state: 'New York',
-    #     price: 600,
-    #     num_beds: 5,
-    #     num_baths: 4,
-    #     lng: -73.96602098902217,
-    #     lat: 40.76455284545827 
-    # })
+    sonja_townhouse = Property.create!({
+        host_id: sonja.id,
+        host_name: 'Sonja',
+        property_name: 'Sonja’s UES Townhouse',
+        description: "…There’s nothing grey about these gardens. All kinds of fun welcome, just make sure you don't touch the f*cking Morgan Letters.", 
+        city: 'New York',
+        state: 'New York',
+        price: 600,
+        num_beds: 5,
+        num_baths: 4,
+        lng: -73.96602098902217,
+        lat: 40.76455284545827 
+    })
 
-    # bethenny_soho = Property.create!({
-    #     host_id: bethenny.id,
-    #     host_name: 'Bethenny',
-    #     property_name: 'Bethenny’s Soho Apartment',
-    #     description: "Make New York City your playground during your stay at this newly renovated Soho loft. Skinnygirl goodies included in welcome package.", 
-    #     city: 'New York',
-    #     state: 'New York',
-    #     price: 450,
-    #     num_beds: 3,
-    #     num_baths: 3,
-    #     lng: -74.0010870034371,
-    #     lat: 40.72414883768638
-    # })
+    bethenny_soho = Property.create!({
+        host_id: bethenny.id,
+        host_name: 'Bethenny',
+        property_name: 'Bethenny’s Soho Apartment',
+        description: "Make New York City your playground during your stay at this newly renovated Soho loft. Skinnygirl goodies included in welcome package.", 
+        city: 'New York',
+        state: 'New York',
+        price: 450,
+        num_beds: 3,
+        num_baths: 3,
+        lng: -74.0010870034371,
+        lat: 40.72414883768638
+    })
 
-    # ramona_ues = Property.create!({
-    #     host_id: ramona.id,
-    #     host_name: 'Ramona',
-    #     property_name: 'Ramona’s UES Apartment',
-    #     description: "This apartment is an acquired taste. You don’t like it? Acquire some taste! A hop, skip, and a jump from Bergdorf's and Trump Tower.", 
-    #     city: 'New York',
-    #     state: 'New York',
-    #     price: 380,
-    #     num_beds: 4,
-    #     num_baths: 3,
-    #     lng: -73.96883727966497,
-    #     lat: 40.76641825858708
-    # })
+    ramona_ues = Property.create!({
+        host_id: ramona.id,
+        host_name: 'Ramona',
+        property_name: 'Ramona’s UES Apartment',
+        description: "This apartment is an acquired taste. You don’t like it? Acquire some taste! A hop, skip, and a jump from Bergdorf's and Trump Tower.", 
+        city: 'New York',
+        state: 'New York',
+        price: 380,
+        num_beds: 4,
+        num_baths: 3,
+        lng: -73.96883727966497,
+        lat: 40.76641825858708
+    })
 
-    # carole_soho = Property.create!({
-    #     host_id: carole.id,
-    #     host_name: 'Carole',
-    #     property_name: 'Carole’s Soho Duplex',
-    #     description: "This home is fit for a princess, but not a drama queen. If you're in the mood to dine in, the hostess has a private 28-year-old chef on speed dial.", 
-    #     city: 'New York',
-    #     state: 'New York',
-    #     price: 420,
-    #     num_beds: 1,
-    #     num_baths: 1,
-    #     lng: -74.00252466746173,
-    #     lat: 40.72388864679813
-    # })
+    carole_soho = Property.create!({
+        host_id: carole.id,
+        host_name: 'Carole',
+        property_name: 'Carole’s Soho Duplex',
+        description: "This home is fit for a princess, but not a drama queen. If you're in the mood to dine in, the hostess has a private 28-year-old chef on speed dial.", 
+        city: 'New York',
+        state: 'New York',
+        price: 420,
+        num_beds: 1,
+        num_baths: 1,
+        lng: -74.00252466746173,
+        lat: 40.72388864679813
+    })
 
-    # jenna_soho = Property.create!({
-    #     host_id: jenna.id,
-    #     host_name: 'Jenna',
-    #     property_name: 'Jenna’s Soho Loft',
-    #     description: "Former creative headquarters for J. Crew (2008-2017).", 
-    #     city: 'New York',
-    #     state: 'New York',
-    #     price: 430,
-    #     num_beds: 1,
-    #     num_baths: 1,
-    #     lng: -74.0020096833335,
-    #     lat: 40.72564491555413
-    # })
+    jenna_soho = Property.create!({
+        host_id: jenna.id,
+        host_name: 'Jenna',
+        property_name: 'Jenna’s Soho Loft',
+        description: "Former creative headquarters for J. Crew (2008-2017).", 
+        city: 'New York',
+        state: 'New York',
+        price: 430,
+        num_beds: 1,
+        num_baths: 1,
+        lng: -74.0020096833335,
+        lat: 40.72564491555413
+    })
 
     # # NON-MANHATTAN RHONY PROPERTIES --- commenting out for now, will expand later when ready to do more with maps
 
-    # dorinda_bm = Property.create!({
-    #     host_id: dorinda.id,
-    #     host_name: 'Dorinda',
-    #     property_name: 'Bluestone Manor',
-    #     description: "Come make it nice in the Berkshires with Dorinda! Perfect your next Ultimate Girls' trip.", 
-    #     city: 'Great Barrington',
-    #     state: 'Massachusetts',
-    #     price: 740,
-    #     num_beds: 8,
-    #     num_baths: 6,
-    #     lng: -73.36305352490433,
-    #     lat: 42.19511044847477
-    # })
+    dorinda_bm = Property.create!({
+        host_id: dorinda.id,
+        host_name: 'Dorinda',
+        property_name: 'Bluestone Manor',
+        description: "Come make it nice in the Berkshires with Dorinda! Perfect your next Ultimate Girls' trip.", 
+        city: 'Great Barrington',
+        state: 'Massachusetts',
+        price: 740,
+        num_beds: 8,
+        num_baths: 6,
+        lng: -73.36305352490433,
+        lat: 42.19511044847477
+    })
 
-    # bethenny_montauk = Property.create!({
-    #     host_id: bethenny.id,
-    #     host_name: 'Bethenny',
-    #     property_name: 'Bethenny’s Montauk Home',
-    #     description: "Mention it all during your stay at Bethenny’s beach house. Steps from Montauk Hwy.", 
-    #     city: 'Montauk',
-    #     state: 'New York',
-    #     price: 610,
-    #     num_beds: 5,
-    #     num_baths: 5,
-    #     lng: -71.97444877105724,
-    #     lat: 41.030743122000054
-    # })
+    bethenny_montauk = Property.create!({
+        host_id: bethenny.id,
+        host_name: 'Bethenny',
+        property_name: 'Bethenny’s Montauk Home',
+        description: "Mention it all during your stay at Bethenny’s beach house. Steps from Montauk Hwy.", 
+        city: 'Montauk',
+        state: 'New York',
+        price: 610,
+        num_beds: 5,
+        num_baths: 5,
+        lng: -71.97444877105724,
+        lat: 41.030743122000054
+    })
 
-    # luann_sag = Property.create!({
-    #     host_id: bethenny.id,
-    #     host_name: 'Luann',
-    #     property_name: "Luann's Sag Harbor Home",
-    #     description: "If you can’t be cool, you can’t be with the Countess at this beautiful home in Sag Harbor.", 
-    #     city: 'Sag Harbor',
-    #     state: 'New York',
-    #     price: 620,
-    #     num_beds: 5,
-    #     num_baths: 4,
-    #     lng: -72.30727134448259,
-    #     lat: 40.991528845249796
-    # })
+    luann_sag = Property.create!({
+        host_id: bethenny.id,
+        host_name: 'Luann',
+        property_name: "Luann's Sag Harbor Home",
+        description: "If you can’t be cool, you can’t be with the Countess at this beautiful home in Sag Harbor.", 
+        city: 'Sag Harbor',
+        state: 'New York',
+        price: 620,
+        num_beds: 5,
+        num_baths: 4,
+        lng: -72.30727134448259,
+        lat: 40.991528845249796
+    })
 
     # # RHONJ PROPERTIES
 
-    # teresa_old = Property.create!({
-    #     host_id: teresa.id,
-    #     host_name: 'Teresa',
-    #     property_name: 'Giudice Family Home',
-    #     description: "Live like one of Jersey’s favorite families. Just don’t bring sprinkle cookies or use analogies during your stay…", 
-    #     city: 'Montville',
-    #     state: 'New Jersey',
-    #     price: 420,
-    #     num_beds: 8,
-    #     num_baths: 10,
-    #     lng: -74.35093834037811,
-    #     lat: 40.89743042253925
-    # })
+    teresa_old = Property.create!({
+        host_id: teresa.id,
+        host_name: 'Teresa',
+        property_name: 'Giudice Family Home',
+        description: "Live like one of Jersey’s favorite families. Just don’t bring sprinkle cookies or use analogies during your stay…", 
+        city: 'Montville',
+        state: 'New Jersey',
+        price: 420,
+        num_beds: 8,
+        num_baths: 10,
+        lng: -74.35093834037811,
+        lat: 40.89743042253925
+    })
 
     # teresa_new = Property.create!({
     #     host_id: teresa.id,
@@ -339,23 +339,23 @@ require "open-uri"
     # dorinda_ues.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/dorinda_ues/dorinda_ues_9.png'), filename: 'dorinda_ues_9.png')
 
     
-    # sonja_townhouse.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/sonja_townhouse/sonja_townhouse_1.png'), filename: 'sonja_townhouse_1.png')
-    # sonja_townhouse.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/sonja_townhouse/sonja_townhouse_2.png'), filename: 'sonja_townhouse_2.png')
-    # sonja_townhouse.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/sonja_townhouse/sonja_townhouse_3.png'), filename: 'sonja_townhouse_3.png')
-    # sonja_townhouse.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/sonja_townhouse/sonja_townhouse_4.png'), filename: 'sonja_townhouse_4.png')
-    # sonja_townhouse.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/sonja_townhouse/sonja_townhouse_5.png'), filename: 'sonja_townhouse_5.png')
+    sonja_townhouse.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/sonja_townhouse/sonja_townhouse_1.png'), filename: 'sonja_townhouse_1.png')
+    sonja_townhouse.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/sonja_townhouse/sonja_townhouse_2.png'), filename: 'sonja_townhouse_2.png')
+    sonja_townhouse.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/sonja_townhouse/sonja_townhouse_3.png'), filename: 'sonja_townhouse_3.png')
+    sonja_townhouse.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/sonja_townhouse/sonja_townhouse_4.png'), filename: 'sonja_townhouse_4.png')
+    sonja_townhouse.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/sonja_townhouse/sonja_townhouse_5.png'), filename: 'sonja_townhouse_5.png')
     # sonja_townhouse.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/sonja_townhouse/sonja_townhouse_6.png'), filename: 'sonja_townhouse_6.png')
     # # sonja_townhouse.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/sonja_townhouse/sonja_townhouse_7.png'), filename: 'sonja_townhouse_7.png')
     # # sonja_townhouse.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/sonja_townhouse/sonja_townhouse_8.png'), filename: 'sonja_townhouse_8.png')
     # sonja_townhouse.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/sonja_townhouse/sonja_townhouse_9.png'), filename: 'sonja_townhouse_9.png')
     # sonja_townhouse.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/sonja_townhouse/sonja_townhouse_10.png'), filename: 'sonja_townhouse_10.png')
 
-    # bethenny_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_soho/bethenny_soho_1.png'), filename: 'bethenny_soho_1.png')
-    # bethenny_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_soho/bethenny_soho_2.png'), filename: 'bethenny_soho_2.png')
-    # bethenny_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_soho/bethenny_soho_3.png'), filename: 'bethenny_soho_3.png')
-    # bethenny_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_soho/bethenny_soho_4.png'), filename: 'bethenny_soho_4.png')
-    # bethenny_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_soho/bethenny_soho_5.png'), filename: 'bethenny_soho_5.png')
-    # bethenny_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_soho/bethenny_soho_6.png'), filename: 'bethenny_soho_6.png')
+    bethenny_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_soho/bethenny_soho_1.png'), filename: 'bethenny_soho_1.png')
+    bethenny_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_soho/bethenny_soho_2.png'), filename: 'bethenny_soho_2.png')
+    bethenny_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_soho/bethenny_soho_3.png'), filename: 'bethenny_soho_3.png')
+    bethenny_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_soho/bethenny_soho_4.png'), filename: 'bethenny_soho_4.png')
+    bethenny_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_soho/bethenny_soho_5.png'), filename: 'bethenny_soho_5.png')
+    bethenny_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_soho/bethenny_soho_6.png'), filename: 'bethenny_soho_6.png')
     # # bethenny_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_soho/bethenny_soho_7.png'), filename: 'bethenny_soho_7.png')
     # # bethenny_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_soho/bethenny_soho_8.png'), filename: 'bethenny_soho_8.png')
     # # bethenny_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_soho/bethenny_soho_9.png'), filename: 'bethenny_soho_9.png')
@@ -365,19 +365,47 @@ require "open-uri"
     # bethenny_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_soho/bethenny_soho_13.png'), filename: 'bethenny_soho_13.png')
     # bethenny_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_soho/bethenny_soho_14.png'), filename: 'bethenny_soho_14.png')
 
-    # ramona_ues.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/ramona_ues/ramona_ues_1.png'), filename: 'ramona_ues_1.png')
+    ramona_ues.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/ramona_ues/ramona_ues_1.png'), filename: 'ramona_ues_1.png')
+    ramona_ues.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/ramona_ues/ramona_ues_2.png'), filename: 'ramona_ues_2.png')
+    ramona_ues.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/ramona_ues/ramona_ues_3.png'), filename: 'ramona_ues_3.png')
+    ramona_ues.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/ramona_ues/ramona_ues_4.png'), filename: 'ramona_ues_4.png')
+    ramona_ues.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/ramona_ues/ramona_ues_5.png'), filename: 'ramona_ues_5.png')
 
-    # carole_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/carole_soho/carole_soho_1.png'), filename: 'carole_soho_1.png')
+    carole_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/carole_soho/carole_soho_1.png'), filename: 'carole_soho_1.png')
+    carole_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/carole_soho/carole_soho_2.png'), filename: 'carole_soho_2.png')
+    carole_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/carole_soho/carole_soho_3.png'), filename: 'carole_soho_3.png')
+    carole_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/carole_soho/carole_soho_4.png'), filename: 'carole_soho_4.png')
+    carole_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/carole_soho/carole_soho_5.png'), filename: 'carole_soho_5.png')
 
-    # jenna_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/jenna_soho/jenna_soho_1.png'), filename: 'jenna_soho_1.png')
+    jenna_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/jenna_soho/jenna_soho_1.png'), filename: 'jenna_soho_1.png')
+    jenna_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/jenna_soho/jenna_soho_2.png'), filename: 'jenna_soho_2.png')
+    jenna_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/jenna_soho/jenna_soho_3.png'), filename: 'jenna_soho_3.png')
+    jenna_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/jenna_soho/jenna_soho_4.png'), filename: 'jenna_soho_4.png')
+    jenna_soho.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/jenna_soho/jenna_soho_5.png'), filename: 'jenna_soho_5.png')
 
-    # dorinda_bm.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/dorinda_bm/dorinda_bm_1.png'), filename: 'dorinda_bm_1.png')
+    dorinda_bm.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/dorinda_bm/dorinda_bm_1.png'), filename: 'dorinda_bm_1.png')
+    dorinda_bm.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/dorinda_bm/dorinda_bm_2.png'), filename: 'dorinda_bm_2.png')
+    dorinda_bm.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/dorinda_bm/dorinda_bm_3.png'), filename: 'dorinda_bm_3.png')
+    dorinda_bm.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/dorinda_bm/dorinda_bm_4.png'), filename: 'dorinda_bm_4.png')
+    dorinda_bm.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/dorinda_bm/dorinda_bm_5.png'), filename: 'dorinda_bm_5.png')
 
-    # bethenny_montauk.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_montauk/bethenny_montauk_1.png'), filename: 'bethenny_montauk_1.png')
+    bethenny_montauk.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_montauk/bethenny_montauk_1.png'), filename: 'bethenny_montauk_1.png')
+    bethenny_montauk.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_montauk/bethenny_montauk_2.png'), filename: 'bethenny_montauk_2.png')
+    bethenny_montauk.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_montauk/bethenny_montauk_3.png'), filename: 'bethenny_montauk_3.png')
+    bethenny_montauk.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_montauk/bethenny_montauk_4.png'), filename: 'bethenny_montauk_4.png')
+    bethenny_montauk.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_montauk/bethenny_montauk_5.png'), filename: 'bethenny_montauk_5.png')
 
-    # luann_sag.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/luann_sag/luann_sag_1.png'), filename: 'luann_sag_1.png')
+    luann_sag.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/luann_sag/luann_sag_1.png'), filename: 'luann_sag_1.png')
+    luann_sag.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/luann_sag/luann_sag_2.png'), filename: 'luann_sag_2.png')
+    luann_sag.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/luann_sag/luann_sag_3.png'), filename: 'luann_sag_3.png')
+    luann_sag.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/luann_sag/luann_sag_4.png'), filename: 'luann_sag_4.png')
+    luann_sag.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/luann_sag/luann_sag_5.png'), filename: 'luann_sag_5.png')
 
-    # teresa_old.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhonj/teresa_old/teresa_old_1.png'), filename: 'teresa_old_1.png')
+    teresa_old.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhonj/teresa_old/teresa_old_1.png'), filename: 'teresa_old_1.png')
+    teresa_old.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhonj/teresa_old/teresa_old_2.png'), filename: 'teresa_old_2.png')
+    teresa_old.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhonj/teresa_old/teresa_old_3.png'), filename: 'teresa_old_3.png')
+    teresa_old.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhonj/teresa_old/teresa_old_4.png'), filename: 'teresa_old_4.png')
+    teresa_old.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhonj/teresa_old/teresa_old_5.png'), filename: 'teresa_old_5.png')
 
     # teresa_new.photos.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhonj/teresa_new/teresa_new_1.png'), filename: 'teresa_new_1.png')
 

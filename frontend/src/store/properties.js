@@ -27,7 +27,7 @@ export const fetchProperty = (propertyId) => async (dispatch) => {
 //   console.log(data)
     // debugger
   dispatch(addProperty(data));
-//   return response;
+  return response;
 };
 
 function propertiesReducer(state = {}, action) {
@@ -36,8 +36,8 @@ function propertiesReducer(state = {}, action) {
       return action.payload;
     case ADD_PROPERTY:
       const property = action.payload;
-    //   debugger
-      return { ...state, [property.id]: property };
+      // debugger
+      return { [property.id]: property };
     default:
       return state;
   }
