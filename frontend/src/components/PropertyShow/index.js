@@ -34,16 +34,16 @@ function PropertyShowPage() {
 
   let bedDetails;
   if (numBeds === 1) {
-    bedDetails = <span>{numBeds} bed</span>;
+    bedDetails = <span>{numBeds} bedroom</span>;
   } else {
-    bedDetails = <span>{numBeds} beds</span>;
+    bedDetails = <span>{numBeds} bedrooms</span>;
   }
 
   let bathDetails;
   if (numBaths === 1) {
     bathDetails = <span>{numBaths} bath</span>;
   } else {
-    bathDetails = <span>{numBaths} beds</span>;
+    bathDetails = <span>{numBaths} baths</span>;
   }
 
   const splitPropertyName = propertyName.split(" ")
@@ -99,10 +99,10 @@ function PropertyShowPage() {
             </li>
           </li>
           <li className="show-page-description">{description}</li>
-          <li className="show-page-price">
+          {/* <li className="show-page-price">
             <span className="show-page-price-span">${price}</span>{" "}
             <span className="show-page-night-span">night</span>
-          </li>
+          </li> */}
         </ul>
       </div>
     </div>
