@@ -91,3 +91,8 @@
     font-weight: 300;
     padding-top: 28px;
 }
+
+.bottom-show-page-info-container {
+        width: 816px;
+        display: flex;
+}

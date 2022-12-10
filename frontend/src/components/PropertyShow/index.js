@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import NewReservationForm from "../NewReservationForm";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProperty } from "../../store/properties";
 import "./PropertyShow.css";
@@ -53,7 +53,7 @@ function PropertyShowPage() {
 
     return (
       <div className="property-show">
-        <div className="show-page-info-container">
+        <section className="show-page-info-container">
           <ul className="show-page-fields">
             <li>
               <h4 className="show-page-property-name">{propertyName}</h4>
@@ -100,13 +100,16 @@ function PropertyShowPage() {
                 {bedDetails} · {bathDetails}
               </li>
             </li>
-            <li className="show-page-description">{description}</li>
             {/* <li className="show-page-price">
             <span className="show-page-price-span">${price}</span>{" "}
             <span className="show-page-night-span">night</span>
           </li> */}
           </ul>
-        </div>
+        </section>
+        <section className="bottom-show-page-info-container">
+          <div className="show-page-description">{description}</div>
+          <NewReservationForm />
+        </section>
       </div>
     );
 }
