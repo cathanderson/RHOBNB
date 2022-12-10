@@ -4,7 +4,7 @@ const SET_RESERVATIONS = "reservations/setReservations";
 const ADD_RESERVATION = "reservations/addReservation";
 const REMOVE_RESERVATION = "reservations/removeReservation";
 
-const setReservations = (reservations) => ({
+export const setReservations = (reservations) => ({
   type: SET_RESERVATIONS,
   payload: reservations,
 });
@@ -14,7 +14,97 @@ export const addReservation = (reservation) => ({
   payload: reservation,
 });
 
-const removeReservation = (reservation) => ({
+export const removeReservation = (reservationId) => ({
   type: REMOVE_RESERVATION,
-  payload: reservation,
+  payload: reservationId,
 });
+
+export const fetchReservations = () => async (dispatch) => {
+  const response = await csrfFetch(`/api/reservations`);
+  const data = await response.json();
+  //   console.log(data);
+  dispatch(setReservations(data.reservations));
+  return response;
+};
+
+export const fetchReservation = (reservationId) => async (dispatch) => {
+  const response = await csrfFetch(`/api/reservations/${reservationId}`);
+  const data = await response.json();
+  dispatch(addReservation(data.reservation));
+  return response;
+};
+
+export const createReservation = (reservation) => async (dispatch) => {
+//   const { guestId, propertyId, checkInDate, checkOutDate, numGuests } =
+//     reservation;
+  const { guest_id, property_id, check_in_date, check_out_date, num_guests } =
+    reservation;
+  const response = await csrfFetch(`/api/reservations`, {
+    method: "POST",
+    // body: JSON.stringify({
+    //   guestId,
+    //   propertyId,
+    //   checkInDate,
+    //   checkOutDate,
+    //   numGuests,
+    // }),
+    body: JSON.stringify({
+      guest_id,
+      property_id,
+      check_in_date,
+      check_out_date,
+      num_guests,
+    }),
+  });
+  const data = await response.json();
+  dispatch(addReservation(data));
+};
+
+export const updateReservation = (reservation) => async (dispatch) => {
+    debugger
+    const { guest_id, property_id, check_in_date, check_out_date, num_guests } =
+      reservation;
+  const response = await csrfFetch(`/api/reservations/${reservation.id}`, {
+    method: "PATCH",
+    body: JSON.stringify({
+      guest_id,
+      property_id,
+      check_in_date,
+      check_out_date,
+      num_guests,
+    }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const data = await response.json();
+  dispatch(addReservation(data));
+};
+
+export const deleteReservation = (reservationId) => async (dispatch) => {
+  await csrfFetch(`/api/reservations/${reservationId}`, {
+    method: "DELETE",
+  });
+
+  dispatch(removeReservation(reservationId));
+};
+
+function reservationsReducer(state = {}, action) {
+  const newState = { ...state };
+
+  switch (action.type) {
+    case SET_RESERVATIONS:
+      return { ...newState, ...action.reservations };
+    case ADD_RESERVATION:
+        // debugger
+      newState[action.payload.id] = action.payload;
+      return newState;
+    case REMOVE_RESERVATION:
+      delete newState[action.reservationId];
+      return newState;
+    default:
+      return state;
+  }
+}
+
+export default reservationsReducer;
