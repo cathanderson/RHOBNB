@@ -8,14 +8,22 @@ import * as reservationActions from "../../store/reservations";
 function NewReservationForm() {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
-  const guest_id = sessionUser.id;
-  const { property_id } = useParams();
+
+  let guest_id = null;
+  if (sessionUser) {
+    guest_id = sessionUser.id;
+  }
+
+  const { id } = useParams();
   const [check_in_date, setCheckInDate] = useState("");
   const [check_out_date, setCheckOutDate] = useState("");
   const [num_guests, setNumGuests] = useState("");
   const [errors, setErrors] = useState([]);
+  const property_id = id;
 
   //   if (!sessionUser) return <Redirect to="/" />;
+
+//   debugger;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -41,13 +49,17 @@ function NewReservationForm() {
         else setErrors([res.statusText]);
       });
     }
-    return setErrors(["Something else went wrong, please try again."]);
+    return setErrors(["Please log in to reserve this property!"]);
   };
 
   return (
     <>
       {/* <h3 className="new-reservation-form-title">Reserve this home</h3> */}
       <form onSubmit={handleSubmit} className="reservation-form">
+        <input type="hidden" value={property_id} />
+
+        <input type="hidden" value={guest_id} />
+
         <input
           type="date"
           value={check_in_date}
@@ -64,13 +76,12 @@ function NewReservationForm() {
           required
         />
 
-        {/* <input
-          type="text"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email"
+        <input
+          type="number"
+          value={num_guests}
+          onChange={(e) => setNumGuests(e.target.value)}
           required
-        /> */}
+        />
 
         <ul className="form-errors">
           {errors.map((error) => (
@@ -78,7 +89,7 @@ function NewReservationForm() {
           ))}
         </ul>
 
-        <button type="submit">Create Reservation</button>
+        <button type="submit">Reserve</button>
       </form>
     </>
   );
