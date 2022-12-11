@@ -60,28 +60,41 @@ function NewReservationForm() {
 
         <input type="hidden" value={guest_id} />
 
-        <input
-          type="date"
-          value={check_in_date}
-          onChange={(e) => setCheckInDate(e.target.value)}
-          placeholder="3/1/23"
-          required
-        />
+        <div className="combined-date-input-container" id="left-date-input">
+          <div className="date-input-container">
+            <label className="date-input-label">CHECK-IN</label>
+            <input
+              className="date-input"
+              type="date"
+              value={check_in_date}
+              onChange={(e) => setCheckInDate(e.target.value)}
+              required
+            />
+          </div>
 
-        <input
-          type="date"
-          value={check_out_date}
-          onChange={(e) => setCheckOutDate(e.target.value)}
-          placeholder="4/1/23"
-          required
-        />
+          <div className="date-input-container" id="right-date-input">
+            <label className="date-input-label">CHECKOUT</label>
+            <input
+              className="date-input"
+              type="date"
+              value={check_out_date}
+              onChange={(e) => setCheckOutDate(e.target.value)}
+              required
+            />
+          </div>
+        </div>
 
-        <input
-          type="number"
-          value={num_guests}
-          onChange={(e) => setNumGuests(e.target.value)}
-          required
-        />
+        <div className="num-guests-input-container">
+          <label className="num-guests-input-label">GUESTS</label>
+          <input
+            className="num-guests-input"
+            type="number"
+            value={num_guests}
+            onChange={(e) => setNumGuests(e.target.value)}
+            placeholder="Number of guests"
+            required
+          />
+        </div>
 
         <ul className="form-errors">
           {errors.map((error) => (
@@ -89,7 +102,9 @@ function NewReservationForm() {
           ))}
         </ul>
 
-        <button type="submit">Reserve</button>
+        <button className="reserve-button" type="submit">
+          Reserve
+        </button>
       </form>
     </>
   );

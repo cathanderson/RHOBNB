@@ -91,24 +91,33 @@ function PropertyShowPage() {
                 </div>
               </div>
             </li>
-            <li></li>
-            <li className="show-page-hosted-by">
-              {propertyType} hosted by {hostName}
-            </li>
-            <li className="show-page-room-details-container">
-              <li className="show-page-num-beds-num-baths">
-                {bedDetails} · {bathDetails}
-              </li>
-            </li>
             {/* <li className="show-page-price">
             <span className="show-page-price-span">${price}</span>{" "}
             <span className="show-page-night-span">night</span>
           </li> */}
           </ul>
         </section>
-        <section className="bottom-show-page-info-container">
-          <div className="show-page-description">{description}</div>
-          <NewReservationForm />
+        <section className="bottom-show-page-container">
+          <section className="bottom-left-show-page-info-container">
+            <div className="show-page-hosted-by">
+              {propertyType} hosted by {hostName}
+            </div>
+            <div className="show-page-room-details-container">
+              <div className="show-page-num-beds-num-baths">
+                {bedDetails} · {bathDetails}
+              </div>
+            </div>
+            <div className="show-page-description">{description}</div>
+          </section>
+          <section className="bottom-right-show-page-container">
+            <div className="show-page-reservation-form-container">
+              <h4 className="show-page-price">
+                <span className="show-page-price-span">${price}</span>{" "}
+                <span className="show-page-night-span">night</span>
+              </h4>
+              <NewReservationForm />
+            </div>
+          </section>
         </section>
       </div>
     );
