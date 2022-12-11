@@ -97,7 +97,9 @@ function reservationsReducer(state = {}, action) {
       return { ...newState, ...action.reservations };
     case ADD_RESERVATION:
         // debugger
-      newState[action.payload.id] = action.payload;
+        if (action.payload !== undefined) {
+          newState[action.payload.id] = action.payload;
+        } 
       return newState;
     case REMOVE_RESERVATION:
       delete newState[action.reservationId];

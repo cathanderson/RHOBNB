@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import * as sessionActions from "../../store/session";
+import { Link } from "react-router-dom";
 
 function LoggedInNav() {
   const dispatch = useDispatch();
@@ -33,14 +34,16 @@ function LoggedInNav() {
       <div className="whole-profile-nav">
         <button onClick={openMenu} className="session-dropdown-button">
           <i className="fa-solid fa-bars" />
-          <i className="fa-solid fa-user-circle"/>
+          <i className="fa-solid fa-user-circle" />
         </button>
         {showMenu && (
           <ul className="profile-dropdown">
             {/* <div className="bold-dropdown-options"> */}
-              <li>Messages</li>
-              <li>Trips</li>
-              <li>Wishlists</li>
+            {/* <li>Messages</li> */}
+            <li>
+              <Link to="/reservations">Trips</Link>
+            </li>
+            {/* <li>Wishlists</li> */}
             {/* </div> */}
             <li>
               <a href="https://github.com/cathanderson">Help</a>
@@ -50,7 +53,9 @@ function LoggedInNav() {
                 Learn more about <br></br>the Real Housewives
               </a>
             </li>
-            <li className="clickable-option" onClick={logout}>Log out</li>
+            <li className="clickable-option" onClick={logout}>
+              Log out
+            </li>
           </ul>
         )}
       </div>

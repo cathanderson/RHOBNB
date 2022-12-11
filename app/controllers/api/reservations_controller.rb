@@ -2,11 +2,13 @@ class Api::ReservationsController < ApplicationController
     wrap_parameters include: Reservation.attribute_names
 
     def index
-        @reservations = Reservation.all
+        @reservations = Reservation.all.where(guest_id: current_user.id)
+        render :index
     end
 
     def show
         @reservation = Reservation.find(params[:id])
+        render :show
     end
 
     def create
@@ -20,6 +22,7 @@ class Api::ReservationsController < ApplicationController
     end
 
     def update
+        debugger
         @reservation = Reservation.find(params[:id])
         if @reservation.update(reservation_params)
             render :show
