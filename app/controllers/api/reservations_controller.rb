@@ -35,6 +35,7 @@ class Api::ReservationsController < ApplicationController
         @reservation = Reservation.find(params[:id])
         if @reservation 
             @reservation.destroy 
+            render :show
         else 
             render json: ["Oops! We can't find the reservation you're looking for."], status: 404
         end 

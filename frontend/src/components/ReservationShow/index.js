@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory, Redirect } from "react-router-dom";
 import NewReservationForm from "../NewReservationForm";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchReservation } from "../../store/reservations";
+import { fetchReservation, deleteReservation } from "../../store/reservations";
 import { Modal } from "../../context/Modal";
 import "./ReservationShow.css";
 import EditReservationForm from "../EditReservationForm";
@@ -12,6 +12,7 @@ function ReservationShow() {
   const { id } = useParams();
   const [showEditReservationModal, setShowEditReservationModal] =
     useState(false);
+  const history = useHistory();
 
   // debugger
   useEffect(() => {
@@ -29,6 +30,12 @@ function ReservationShow() {
   const { guestId, propertyId, checkInDate, checkOutDate, numGuests } =
     reservation;
 
+  const handleCancelClick = () => {
+    dispatch(deleteReservation(id));
+    history.push(`/reservations`);
+    // <Redirect to="/reservations" />
+  }
+
   return (
     <>
       <div className="reservation-show">
@@ -39,7 +46,9 @@ function ReservationShow() {
             <li>Check-in: {checkInDate}</li>
             <li>Check-out: {checkOutDate}</li>
             <li>Number of Guests: {numGuests}</li>
-            <button>Cancel Reservation</button>
+            <button onClick={handleCancelClick}>
+              Cancel Reservation
+            </button>
             <button onClick={() => setShowEditReservationModal(true)}>
               Modify Reservation
             </button>
@@ -56,7 +65,7 @@ function ReservationShow() {
             <h3 className="modal-title">Edit Reservation</h3>
             <p> </p>
           </header>
-          <EditReservationForm reservation = {reservation} />
+          <EditReservationForm reservation={reservation} />
         </Modal>
       )}
     </>

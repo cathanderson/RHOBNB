@@ -105,7 +105,7 @@ function reservationsReducer(state = {}, action) {
         } 
       return newState;
     case REMOVE_RESERVATION:
-      delete newState[action.reservationId];
+      delete newState[action.payload];
       return newState;
     default:
       return state;
