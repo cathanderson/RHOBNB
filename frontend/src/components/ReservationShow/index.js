@@ -21,7 +21,6 @@ function ReservationShow() {
   }, [id, dispatch]);
 
   const reservation = useSelector((state) => state.reservations[id]);
-  // debugger
 
   if (!reservation) {
     return null;
@@ -30,11 +29,13 @@ function ReservationShow() {
   const { guestId, propertyId, checkInDate, checkOutDate, numGuests } =
     reservation;
 
+  // console.log(reservation.property.description)
+
   const handleCancelClick = () => {
     dispatch(deleteReservation(id));
     history.push(`/reservations`);
     // <Redirect to="/reservations" />
-  }
+  };
 
   return (
     <>
@@ -46,9 +47,7 @@ function ReservationShow() {
             <li>Check-in: {checkInDate}</li>
             <li>Check-out: {checkOutDate}</li>
             <li>Number of Guests: {numGuests}</li>
-            <button onClick={handleCancelClick}>
-              Cancel Reservation
-            </button>
+            <button onClick={handleCancelClick}>Cancel Reservation</button>
             <button onClick={() => setShowEditReservationModal(true)}>
               Modify Reservation
             </button>

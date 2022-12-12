@@ -23,6 +23,8 @@
 #
 class Reservation < ApplicationRecord
 
+    before_validation :ensure_property
+
     validates :guest_id, :property_id, :check_in_date, :check_out_date, :num_guests, presence: true
 
     belongs_to :guest,
@@ -32,5 +34,11 @@ class Reservation < ApplicationRecord
     belongs_to :property,
         foreign_key: :property_id,
         class_name: :Property
+
+    private
+
+    def ensure_property
+        @property = Property.find_by(id: :property_id)
+    end
         
 end
