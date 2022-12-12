@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 // import { Modal } from "../../context/Modal";
 import * as reservationActions from "../../store/reservations";
 
-function EditReservationForm() {
+function EditReservationForm({ reservation }) {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
 
@@ -15,11 +15,11 @@ function EditReservationForm() {
   }
 
   const { id } = useParams();
-  const [check_in_date, setCheckInDate] = useState("");
-  const [check_out_date, setCheckOutDate] = useState("");
-  const [num_guests, setNumGuests] = useState("");
+  const [check_in_date, setCheckInDate] = useState(reservation.check_in_date);
+  const [check_out_date, setCheckOutDate] = useState(reservation.check_out_date);
+  const [num_guests, setNumGuests] = useState(reservation.num_guests);
   const [errors, setErrors] = useState([]);
-  const property_id = id;
+  const property_id = reservation.property_id;
 
   //   if (!sessionUser) return <Redirect to="/" />;
 
@@ -31,6 +31,7 @@ function EditReservationForm() {
       setErrors([]);
       return dispatch(
         reservationActions.updateReservation({
+          id,
           guest_id,
           property_id,
           check_in_date,
@@ -64,7 +65,6 @@ function EditReservationForm() {
           type="date"
           value={check_in_date}
           onChange={(e) => setCheckInDate(e.target.value)}
-          placeholder="3/1/23"
           required
         />
 
@@ -72,7 +72,6 @@ function EditReservationForm() {
           type="date"
           value={check_out_date}
           onChange={(e) => setCheckOutDate(e.target.value)}
-          placeholder="4/1/23"
           required
         />
 

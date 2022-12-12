@@ -19,6 +19,9 @@ export const removeReservation = (reservationId) => ({
   payload: reservationId,
 });
 
+export const getReservations = (state) =>
+  state.reservations ? Object.values(state.reservations) : [];
+
 export const fetchReservations = () => async (dispatch) => {
   const response = await csrfFetch(`/api/reservations`);
   const data = await response.json();
@@ -61,7 +64,7 @@ export const createReservation = (reservation) => async (dispatch) => {
 };
 
 export const updateReservation = (reservation) => async (dispatch) => {
-    debugger
+    // debugger
     const { guest_id, property_id, check_in_date, check_out_date, num_guests } =
       reservation;
   const response = await csrfFetch(`/api/reservations/${reservation.id}`, {
@@ -94,7 +97,7 @@ function reservationsReducer(state = {}, action) {
 
   switch (action.type) {
     case SET_RESERVATIONS:
-      return { ...newState, ...action.reservations };
+      return { ...newState, ...action.payload };
     case ADD_RESERVATION:
         // debugger
         if (action.payload !== undefined) {

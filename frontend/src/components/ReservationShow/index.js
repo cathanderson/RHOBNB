@@ -56,7 +56,7 @@ function ReservationShow() {
             <h3 className="modal-title">Edit Reservation</h3>
             <p> </p>
           </header>
-          <EditReservationForm />
+          <EditReservationForm reservation = {reservation} />
         </Modal>
       )}
     </>

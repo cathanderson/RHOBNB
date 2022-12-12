@@ -22,7 +22,7 @@ class Api::ReservationsController < ApplicationController
     end
 
     def update
-        debugger
+        # debugger
         @reservation = Reservation.find(params[:id])
         if @reservation.update(reservation_params)
             render :show

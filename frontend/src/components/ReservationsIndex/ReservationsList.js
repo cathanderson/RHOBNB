@@ -6,7 +6,10 @@ function ReservationsList({ reservations }) {
     <>
       <div className="reservations-list">
         {reservations.map((reservation) => (
-          <ReservationsListItem key={reservation.id} reservation={reservation} />
+          <ReservationsListItem
+            key={reservation.id}
+            reservation={reservation}
+          />
         ))}
       </div>
     </>
