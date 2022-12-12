@@ -6,7 +6,7 @@ function PropertiesListItem({ reservation }) {
     reservation;
   const history = useHistory();
 
-  // console.log(reservation.property.photoUrls);
+  // console.log(reservation.property);
 
   // let propertyImage;
   // if (reservation.property.photoUrls) {
@@ -19,7 +19,7 @@ function PropertiesListItem({ reservation }) {
   // }
 
   const monthNames = {
-    "1":"January",
+    1:"January",
     2:"February",
     3:"March",
     4:"April",
