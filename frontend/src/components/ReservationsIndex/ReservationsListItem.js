@@ -6,7 +6,40 @@ function PropertiesListItem({ reservation }) {
     reservation;
   const history = useHistory();
 
-  // console.log(reservation.property.description);
+  // console.log(reservation.property.photoUrls);
+
+  // let propertyImage;
+  // if (reservation.property.photoUrls) {
+  //   propertyImage = (
+  //     <img
+  //       className="reservation-list-property-image"
+  //       src={reservation.property.photoUrls[0]}
+  //     ></img>
+  //   );
+  // }
+
+  const monthNames = {
+    "1":"January",
+    2:"February",
+    3:"March",
+    4:"April",
+    5:"May",
+    6:"June",
+    7:"July",
+    8:"August",
+    9:"September",
+    10:"October",
+    11:"November",
+    12:"December",
+};
+
+
+  const checkInMonth =
+    monthNames[parseInt(checkInDate.split("-")[1])];
+  const checkInDay = checkInDate.split("-")[2];
+
+  const checkOutMonth = monthNames[parseInt(checkOutDate.split("-")[1])];
+  const checkOutDay = checkOutDate.split("-")[2];
 
   return (
     <div
@@ -14,38 +47,20 @@ function PropertiesListItem({ reservation }) {
       onClick={() => history.push(`/reservations/${reservation.id}`)}
     >
       <div className="reservations-list-item-container">
-        <ul className="reservations-list-item-fields">
-          <li>
+        <ul className="reservations-list-item-fields-container">
+          <li className="reservations-list-item-location">
             {reservation.property.city}, {reservation.property.state}
           </li>
-          <li>{reservation.property.property_name}</li>
-          <li>
-            {checkInDate} - {checkOutDate}
+          <li className="reservations-list-item-property-name">
+            {reservation.property.property_name}
           </li>
-
-          <li>Number of Guests: {numGuests}</li>
-          <br></br>
-          {/* <li>
-            <img
-              className="list-item-image"
-              src={reservation.photoUrls[0]}
-              // src="https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/properties/rhony/bethenny_soho/bethenny_soho_1.png" // test url works!
-              alt="Main reservation image"
-            ></img>
+          <li className="reservations-list-item-dates">
+            {checkInMonth} {checkInDay} - {checkOutMonth} {checkOutDay}
           </li>
-          <li>
-            <h4 className="reservation-index-reservation-name">
-              {propertyName}
-            </h4>
-          </li>
-          <li className="reservation-index-city-state">
-            {city}, {state}
-          </li>
-          <li className="reservation-index-price">
-            <span className="reservation-index-price-span">${price} </span>
-            <span className="reservation-index-night-span">night</span>
-          </li> */}
         </ul>
+        <div className="reservations-list-item-image-container">
+          {/* {propertyImage} */}
+        </div>
       </div>
     </div>
   );

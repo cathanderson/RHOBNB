@@ -1,0 +1,80 @@
+
+.whole-reservation-index-page-container {
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #222222;
+}
+
+.reservations-list-container {
+    /* max-width: 1200px; */
+display: flex;
+flex-direction: row;
+justify-content: center;
+flex-wrap: wrap;
+align-items: center;
+font-family: Circular,
+        -apple-system,
+        BlinkMacSystemFont,
+        Roboto,
+        Helvetica Neue,
+        sans-serif;
+}
+
+.reservations-list-item {
+    width: 300px;
+    height: 80px;
+    border: 1px solid rgb(206, 206, 206);
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    border-radius: 22px;
+    box-shadow: 3px 3px 3px rgb(227, 227, 227);
+    cursor: pointer;
+    line-height: 22px;
+}
+
+.reservations-list-item:hover {
+    background-color: #f6f6f6;
+}
+
+.trips-title-container {
+    display: block;
+    /* justify-content: flex-start;
+    align-items: flex-start; */
+    width: 75%;
+}
+
+.trips-title {
+    margin: 12px 0px;
+    font-size: 30px;
+    font-weight: 500;
+}
+
+.actual-entire-reservation-index {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    /* max-width: 1000px; */
+    font-family: Circular,
+            -apple-system,
+            BlinkMacSystemFont,
+            Roboto,
+            Helvetica Neue,
+            sans-serif;
+}
+
+.reservations-list-item-location {
+    font-weight: 500;     
+}
+
+.reservations-list-item-dates {
+    color: gray;
+}

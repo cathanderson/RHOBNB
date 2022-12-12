@@ -17,6 +17,8 @@ function PropertyShowPage() {
   const property = useSelector((state) => state.properties[id]);
   // debugger
 
+  console.log(property.photoUrls);
+
   if (!property) {
     return null;
   }

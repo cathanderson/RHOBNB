@@ -26,6 +26,8 @@ function ReservationShow() {
     return null;
   }
 
+  // console.log(reservation.property);
+
   const { guestId, propertyId, checkInDate, checkOutDate, numGuests } =
     reservation;
 
