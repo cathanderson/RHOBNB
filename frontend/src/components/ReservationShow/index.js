@@ -42,10 +42,15 @@ function ReservationShow() {
       <div className="reservation-show">
         <section className="reservation-show-page-info-container">
           <ul className="reservation-show-page-fields">
-            <li>Guest ID: {guestId}</li>
-            <li>Property ID: {propertyId}</li>
-            <li>Check-in: {checkInDate}</li>
-            <li>Check-out: {checkOutDate}</li>
+            <li>
+              {reservation.property.city}, {reservation.property.state}
+            </li>
+            <li>{reservation.property.property_name}</li>
+            <li>{reservation.property.description}</li>
+            <li>
+              {checkInDate} - {checkOutDate}
+            </li>
+
             <li>Number of Guests: {numGuests}</li>
             <button onClick={handleCancelClick}>Cancel Reservation</button>
             <button onClick={() => setShowEditReservationModal(true)}>

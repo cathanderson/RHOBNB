@@ -6,7 +6,7 @@ function PropertiesListItem({ reservation }) {
     reservation;
   const history = useHistory();
 
-  console.log(reservation.property.description);
+  // console.log(reservation.property.description);
 
   return (
     <div
@@ -15,10 +15,14 @@ function PropertiesListItem({ reservation }) {
     >
       <div className="reservations-list-item-container">
         <ul className="reservations-list-item-fields">
-          <li>Reservation ID: {reservation.id}</li>
-          <li>Property ID: {propertyId}</li>
-          <li>Check-in: {checkInDate}</li>
-          <li>Check-out: {checkOutDate}</li>
+          <li>
+            {reservation.property.city}, {reservation.property.state}
+          </li>
+          <li>{reservation.property.property_name}</li>
+          <li>
+            {checkInDate} - {checkOutDate}
+          </li>
+
           <li>Number of Guests: {numGuests}</li>
           <br></br>
           {/* <li>

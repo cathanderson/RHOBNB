@@ -1,13 +1,14 @@
 import "./NewReservationForm.css";
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 // import { Modal } from "../../context/Modal";
 import * as reservationActions from "../../store/reservations";
 
 function NewReservationForm() {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
+  const history = useHistory();
 
   let guest_id = null;
   if (sessionUser) {
@@ -23,12 +24,13 @@ function NewReservationForm() {
 
   //   if (!sessionUser) return <Redirect to="/" />;
 
-//   debugger;
+  //   debugger;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (sessionUser) {
       setErrors([]);
+      history.push(`/reservations`);
       return dispatch(
         reservationActions.createReservation({
           guest_id,
@@ -68,6 +70,8 @@ function NewReservationForm() {
               type="date"
               value={check_in_date}
               onChange={(e) => setCheckInDate(e.target.value)}
+              min={new Date().toISOString().split("T")[0]}
+              max={check_out_date}
               required
             />
           </div>
@@ -79,6 +83,7 @@ function NewReservationForm() {
               type="date"
               value={check_out_date}
               onChange={(e) => setCheckOutDate(e.target.value)}
+              min={check_in_date}
               required
             />
           </div>
@@ -92,11 +97,12 @@ function NewReservationForm() {
             value={num_guests}
             onChange={(e) => setNumGuests(e.target.value)}
             placeholder="Number of guests"
+            min="1"
             required
           />
         </div>
 
-        <ul className="form-errors">
+        <ul className="reservation-form-errors">
           {errors.map((error) => (
             <li key={error}>{error}</li>
           ))}
