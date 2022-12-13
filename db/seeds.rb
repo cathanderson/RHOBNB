@@ -9,9 +9,9 @@
 require "open-uri"
 
 puts "Destroying existing tables..."
-User.destroy_all
-Property.destroy_all
 Reservation.destroy_all
+Property.destroy_all
+User.destroy_all
 
 
 puts "Resetting primary keys..."
@@ -514,8 +514,8 @@ teddi_hollywood_hills = Property.create!({
 vanderpump_beverly_hills = Property.create!({
     host_id: vanderpump.id,
     host_name: 'Lisa',
-    property_name: "Villa Rosa",
-    description: "John Mellencamp’s daughter’s house.", 
+    property_name: "Villa Rosa Estate",
+    description: "Life isn’t all about diamonds and rose, but it can be when you book your stay at Villa Rosa!", 
     city: 'Beverly Hills',
     state: 'California',
     price: 810,

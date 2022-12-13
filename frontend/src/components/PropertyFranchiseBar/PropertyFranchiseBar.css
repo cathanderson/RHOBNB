@@ -1,0 +1,44 @@
+.franchises-icons-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 750px;
+    padding-top: 0px;
+    margin: 0% 25%;
+}
+
+.franchise-icon {
+    height: 36px;
+    width: 36px;
+}
+
+.franchise-icon-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* cursor: pointer; */
+}
+
+.franchise-icon-label {
+    font-family: Circular,
+        -apple-system,
+        BlinkMacSystemFont,
+        Roboto,
+        Helvetica Neue,
+        sans-serif;
+    font-size: 10px;
+    color: #434343;
+    margin-top: 6px;
+    margin-right: 2px;
+    /* cursor: pointer; */
+}
+
+#franchise-icon-label-atlanta {
+    margin-right: 5px;
+}
+
+.franchise-link {
+    text-decoration: none;
+}

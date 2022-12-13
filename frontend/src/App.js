@@ -23,6 +23,9 @@ function App() {
         <Route path="/reservations/:id">
           <ReservationShow />
         </Route>
+        <Route path="/:rh_franchise">
+          <PropertiesIndex />
+        </Route>
       </Switch>
     </>
   );
