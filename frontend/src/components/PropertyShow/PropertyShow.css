@@ -17,7 +17,7 @@
 .property-show-image-container {
     display: flex;
     flex-direction: row;
-    padding-bottom: 30px;
+
 }
 
 .main-property-show-image {
@@ -72,13 +72,13 @@
     font-size: 20px;
     font-weight: 500;
     padding-bottom: 10px;
+    padding-top: 28px;
 }
 
 .show-page-num-beds-num-baths {
     font-size: 14px;
     font-weight: 300;
     padding-bottom: 28px;
-    border-bottom: 1px solid rgb(230, 230, 230);
 }
 
 
@@ -159,7 +159,7 @@
     padding: 30px 20px 30px 20px;
     border-radius: 14px;
     box-shadow: 3px 3px 3px rgb(227, 227, 227);
-    margin-bottom: 50px;
+    margin: 20px 0px 40px 50px;
 }
 
 .show-page-price-span {
@@ -203,5 +203,25 @@ label {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+#host-show-page-image {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.show-page-hosted-by-room-details-image-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgb(230, 230, 230);
+}
+
+.show-page-hosted-by-room-details-container {
+    display: flex;
+        flex-direction: column;
+    
 }
 

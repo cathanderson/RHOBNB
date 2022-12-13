@@ -17,7 +17,7 @@ function PropertyShowPage() {
   const property = useSelector((state) => state.properties[id]);
   // debugger
 
-  console.log(property.photoUrls);
+  // console.log(property.photoUrls);
 
   if (!property) {
     return null;
@@ -101,12 +101,23 @@ function PropertyShowPage() {
         </section>
         <section className="bottom-show-page-container">
           <section className="bottom-left-show-page-info-container">
-            <div className="show-page-hosted-by">
-              {propertyType} hosted by {hostName}
-            </div>
-            <div className="show-page-room-details-container">
-              <div className="show-page-num-beds-num-baths">
-                {bedDetails} · {bathDetails}
+            <div className="show-page-hosted-by-room-details-image-container">
+              <div className="show-page-hosted-by-room-details-container">
+                <div className="show-page-hosted-by">
+                  {propertyType} hosted by {hostName}
+                </div>
+                <div className="show-page-room-details-container">
+                  <div className="show-page-num-beds-num-baths">
+                    {bedDetails} · {bathDetails}
+                  </div>
+                </div>
+              </div>
+              <div className="show-page-hosted-by-image-container">
+                <img
+                  className="non-main-property-show-image"
+                  id="host-show-page-image"
+                  src={property.photoUrls[5]}
+                ></img>
               </div>
             </div>
             <div className="show-page-description">{description}</div>
