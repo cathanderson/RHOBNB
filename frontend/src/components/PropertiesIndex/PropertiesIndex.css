@@ -12,7 +12,7 @@
     justify-content: center;
     flex-wrap: wrap;
     color: #222222;
-    margin-top: 30px;
+    margin-top: 14px;
     /* font-family: 'Montserrat',
     sans-serif; */
         font-family: Circular,
@@ -56,3 +56,47 @@
     font-size: 13px;
     line-height: 15.5px;
 }
+
+.categories-icons-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 750px;
+    padding-top: 0px;
+    margin: 0% 25%;
+}
+
+.category-icon {
+    height: 36px;
+    width: 36px;
+}
+
+.category-icon-container {
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    /* cursor: pointer; */
+}
+
+.category-icon-label {
+            font-family: Circular,
+                    -apple-system,
+                    BlinkMacSystemFont,
+                    Roboto,
+                    Helvetica Neue,
+                    sans-serif;
+                    font-size: 10px;
+                    color: #434343;
+                    margin-top: 6px;
+                    margin-right: 2px;
+                    /* cursor: pointer; */
+}
+
+#category-icon-label-atlanta {
+    margin-right: 5px;
+}
+
+
+

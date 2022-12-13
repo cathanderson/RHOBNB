@@ -81,11 +81,19 @@
 
 .app-title {
     font-weight: 600;
-    font-size: 30px;
-    margin: 20px;
+    font-size: 22px;
+    margin: 20px 20px 20px 50px;
     letter-spacing: -2px;
     color: rgb(239, 18, 92);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
  }
+
+#app-logo {
+ width: auto;
+ height: 40px;
+}
 
 .searchbar-container {
     display: flex;
