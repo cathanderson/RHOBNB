@@ -12,6 +12,7 @@
 #  num_beds      :integer          not null
 #  price         :float            not null
 #  property_name :string           not null
+#  rh_franchise  :string           not null
 #  state         :string           not null
 #  created_at    :datetime         not null
 #  updated_at    :datetime         not null
@@ -29,7 +30,7 @@
 #
 class Property < ApplicationRecord
 
-    validates :city, :description, :host_name, :lat, :lng, :num_baths, :num_beds, :price, :property_name, :state, :host_id, presence: true
+    validates :city, :description, :host_name, :lat, :lng, :num_baths, :num_beds, :price, :property_name, :state, :host_id, :rh_franchise, presence: true
 
     has_many_attached :photos
     

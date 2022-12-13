@@ -10,7 +10,8 @@ json.extract! property,
             :price,
             :property_name,
             :state,
-            :host_id  
+            :host_id,
+            :rh_franchise  
 
 if property.photos.length != 0  
     json.photoUrls property.photos.map{|file| url_for(file)}
