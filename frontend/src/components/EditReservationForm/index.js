@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 // import { Modal } from "../../context/Modal";
 import * as reservationActions from "../../store/reservations";
 
-function EditReservationForm({ reservation }) {
+function EditReservationForm({ reservation, visible }) {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
 
@@ -27,6 +27,7 @@ function EditReservationForm({ reservation }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    visible(false)
     if (sessionUser) {
       setErrors([]);
       return dispatch(
@@ -65,6 +66,8 @@ function EditReservationForm({ reservation }) {
           type="date"
           value={check_in_date}
           onChange={(e) => setCheckInDate(e.target.value)}
+          min={new Date().toISOString().split("T")[0]}
+          max={check_out_date}
           required
         />
 
@@ -72,6 +75,7 @@ function EditReservationForm({ reservation }) {
           type="date"
           value={check_out_date}
           onChange={(e) => setCheckOutDate(e.target.value)}
+          min={check_in_date}
           required
         />
 
@@ -79,6 +83,7 @@ function EditReservationForm({ reservation }) {
           type="number"
           value={num_guests}
           onChange={(e) => setNumGuests(e.target.value)}
+          min="1"
           required
         />
 

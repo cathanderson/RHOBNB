@@ -156,7 +156,10 @@ function ReservationShow() {
             <h3 className="modal-title">Edit Reservation</h3>
             <p> </p>
           </header>
-          <EditReservationForm reservation={reservation} />
+          <EditReservationForm
+            reservation={reservation}
+            visible={setShowEditReservationModal }
+          />
         </Modal>
       )}
     </>
