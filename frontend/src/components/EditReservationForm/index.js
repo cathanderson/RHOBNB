@@ -16,7 +16,9 @@ function EditReservationForm({ reservation, visible }) {
 
   const { id } = useParams();
   const [check_in_date, setCheckInDate] = useState(reservation.check_in_date);
-  const [check_out_date, setCheckOutDate] = useState(reservation.check_out_date);
+  const [check_out_date, setCheckOutDate] = useState(
+    reservation.check_out_date
+  );
   const [num_guests, setNumGuests] = useState(reservation.num_guests);
   const [errors, setErrors] = useState([]);
   const property_id = reservation.property_id;
@@ -27,7 +29,7 @@ function EditReservationForm({ reservation, visible }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    visible(false)
+    visible(false);
     if (sessionUser) {
       setErrors([]);
       return dispatch(
@@ -62,38 +64,56 @@ function EditReservationForm({ reservation, visible }) {
 
         <input type="hidden" value={guest_id} />
 
-        <input
-          type="date"
-          value={check_in_date}
-          onChange={(e) => setCheckInDate(e.target.value)}
-          min={new Date().toISOString().split("T")[0]}
-          max={check_out_date}
-          required
-        />
+        <div
+          className="edit-date-input-container"
+          id="top-edit-date-input-container"
+        >
+          <label className="edit-date-input-label">CHECK-IN</label>
+          <input
+            className="edit-date-input"
+            type="date"
+            value={check_in_date}
+            onChange={(e) => setCheckInDate(e.target.value)}
+            min={new Date().toISOString().split("T")[0]}
+            max={check_out_date}
+            required
+          />
+        </div>
 
-        <input
-          type="date"
-          value={check_out_date}
-          onChange={(e) => setCheckOutDate(e.target.value)}
-          min={check_in_date}
-          required
-        />
+        <div className="edit-date-input-container">
+          <label className="edit-date-input-label">CHECKOUT</label>
+          <input
+            className="edit-date-input"
+            type="date"
+            value={check_out_date}
+            onChange={(e) => setCheckOutDate(e.target.value)}
+            min={check_in_date}
+            required
+          />
+        </div>
 
-        <input
-          type="number"
-          value={num_guests}
-          onChange={(e) => setNumGuests(e.target.value)}
-          min="1"
-          required
-        />
+        <div className="edit-num-guests-input-container">
+          <label className="edit-num-guests-input-label">GUESTS</label>
+          <input
+            className="edit-num-guests-input"
+            type="number"
+            value={num_guests}
+            onChange={(e) => setNumGuests(e.target.value)}
+            placeholder="Number of guests"
+            min="1"
+            required
+          />
+        </div>
 
-        <ul className="form-errors">
+        <ul className="edit-reservation-form-errors">
           {errors.map((error) => (
             <li key={error}>{error}</li>
           ))}
         </ul>
 
-        <button type="submit">Save Edits</button>
+        <button type="submit" className="edit-reservation-reservation-button">
+          Save Edits
+        </button>
       </form>
     </>
   );
