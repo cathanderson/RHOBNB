@@ -59,10 +59,13 @@
         margin-top: 8px;
         box-shadow: 2px 3px 2px rgb(230, 230, 230);
         background-color: white;
+        text-decoration: none;
 }
 
 .clickable-option {
+    color: #222222;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .main-nav {

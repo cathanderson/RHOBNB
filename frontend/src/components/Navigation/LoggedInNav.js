@@ -43,15 +43,25 @@ function LoggedInNav() {
             {/* <div className="bold-dropdown-options"> */}
             {/* <li>Messages</li> */}
             <li>
-              <Link to="/reservations">Trips</Link>
+              <Link className="clickable-option" to="/reservations">
+                Trips
+              </Link>
             </li>
             {/* <li>Wishlists</li> */}
             {/* </div> */}
             <li>
-              <a href="https://github.com/cathanderson">Help</a>
+              <a
+                className="clickable-option"
+                href="https://github.com/cathanderson"
+              >
+                Help
+              </a>
             </li>
             <li>
-              <a href="https://en.wikipedia.org/wiki/The_Real_Housewives">
+              <a
+                className="clickable-option"
+                href="https://en.wikipedia.org/wiki/The_Real_Housewives"
+              >
                 Learn more about <br></br>the Real Housewives
               </a>
             </li>

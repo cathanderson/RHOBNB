@@ -47,10 +47,18 @@ function LoggedOutNav() {
               Sign up
             </li>
             <li>
-              <a href="https://github.com/cathanderson">Help</a>
+              <a
+                className="clickable-option"
+                href="https://github.com/cathanderson"
+              >
+                Help
+              </a>
             </li>
             <li>
-              <a href="https://en.wikipedia.org/wiki/The_Real_Housewives">
+              <a
+                className="clickable-option"
+                href="https://en.wikipedia.org/wiki/The_Real_Housewives"
+              >
                 Learn more about <br></br>the Real Housewives
               </a>
             </li>
