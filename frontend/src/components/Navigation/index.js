@@ -17,7 +17,6 @@ function Navigation() {
     sessionNav = <LoggedOutNav />;
   }
 
-  //LOGIN FORM MODAL SHOULDN'T BE IN THIS COMPONENT, NEEDS TO BE IN LOGGED IN NAV COMPONENT
   return (
     <>
       <nav className="main-nav">

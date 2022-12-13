@@ -34,6 +34,8 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   has_many :reservations,
+    class_name: :Reservation,
+    foreign_key: :guest_id,
     dependent: :destroy
 
   has_many :properties,

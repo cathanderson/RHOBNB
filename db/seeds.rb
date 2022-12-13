@@ -17,7 +17,7 @@ Reservation.destroy_all
 puts "Resetting primary keys..."
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('properties')
-ApplicationRecord.connection.reset_pk_sequence!('reservations')
+ActiveRecord::Base.connection.reset_pk_sequence!('reservations')
 
 
 puts "Creating users..."
