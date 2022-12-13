@@ -4,14 +4,14 @@ import PropertiesListItem from "./PropertiesListItem";
 function PropertiesList({ properties }) {
   return (
     <>
-      <div className="properties-list">
+      <section className="properties-list">
         {properties.map((property) => (
           <PropertiesListItem
             key={property.id}
             property={property}
           />
         ))}
-      </div>
+      </section>
     </>
   );
 }

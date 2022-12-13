@@ -29,12 +29,13 @@ function PropertiesIndex() {
       </>
     );
   } else {
-    debugger
     return (
       <>
         <PropertyFranchiseBar />
-        <PropertiesList properties={properties} />
-        <MapContainer/>
+        <main id="properties-list-and-map-container">
+          <PropertiesList properties={properties} />
+          <MapContainer />
+        </main>
       </>
     );
   }
