@@ -21,5 +21,8 @@
   "homepage": "https://github.com/cathanderson/RHOBNB#readme",
   "engines": {
     "node": "16.17.0"
+  },
+  "dependencies": {
+    "@react-google-maps/api": "^2.17.1"
   }
 }
