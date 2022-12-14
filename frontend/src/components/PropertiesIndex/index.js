@@ -34,7 +34,7 @@ function PropertiesIndex() {
         <PropertyFranchiseBar />
         <main id="properties-list-and-map-container">
           <PropertiesList properties={properties} />
-          <MapContainer />
+          <MapContainer rh_franchise={rh_franchise} />
         </main>
       </>
     );
