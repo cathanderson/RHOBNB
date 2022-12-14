@@ -6,6 +6,7 @@ import { fetchReservation, deleteReservation } from "../../store/reservations";
 import { Modal } from "../../context/Modal";
 import "./ReservationShow.css";
 import EditReservationForm from "../EditReservationForm";
+import ReservationMapContainer from "../ReservationMapContainer";
 
 function ReservationShow() {
   const dispatch = useDispatch();
@@ -139,12 +140,7 @@ function ReservationShow() {
             </div>
           </ul>
         </section>
-        <section className="reservation-show-page-map-container">
-          <img
-            className="reservation-show-page-map-placeholder"
-            src="https://www.maps-of-the-usa.com/maps/usa/new-york/new-york/large-detailed-road-map-of-south-manhattan-nyc-small.jpg"
-          ></img>
-        </section>
+        <ReservationMapContainer reservation={reservation}/>
       </div>
       {showEditReservationModal && (
         <Modal onClose={() => setShowEditReservationModal(false)}>

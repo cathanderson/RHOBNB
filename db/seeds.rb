@@ -9,8 +9,8 @@
 require "open-uri"
 
 puts "Destroying existing tables..."
-Reservation.destroy_all
 Property.destroy_all
+Reservation.destroy_all
 User.destroy_all
 
 

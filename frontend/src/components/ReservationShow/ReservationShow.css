@@ -7,10 +7,11 @@
             Roboto,
             Helvetica Neue,
             sans-serif;
+    align-items: center;
 }
 
 .reservation-show-page-info-container {
-    width: 33%;
+    width: 55%;
     padding: 10px 60px;
 }
 
