@@ -22,7 +22,6 @@ function PropertyShowPage() {
   const dispatch = useDispatch();
   const { id } = useParams();
 
-  // debugger
   useEffect(() => {
     dispatch(fetchProperty(id));
     dispatch(fetchReviewsByProperty(id))
@@ -30,10 +29,6 @@ function PropertyShowPage() {
 
   const property = useSelector((state) => state.properties[id]);
   const reviews = useSelector(getReviews)
-  console.log(reviews)
-  // debugger
-
-  // console.log(property.photoUrls);
 
   if (!property) {
     return null;
@@ -115,8 +110,8 @@ function PropertyShowPage() {
           </li> */}
           </ul>
         </section>
-        <section className="bottom-show-page-container">
-          <section className="bottom-left-show-page-info-container">
+        <section className="mid-show-page-container">
+          <section className="mid-left-show-page-info-container">
             <div className="show-page-hosted-by-room-details-image-container">
               <div className="show-page-hosted-by-room-details-container">
                 <div className="show-page-hosted-by">
@@ -230,7 +225,7 @@ function PropertyShowPage() {
               </div>
             </div>
           </section>
-          <section className="bottom-right-show-page-container">
+          <section className="mid-right-show-page-container">
             <div className="show-page-reservation-form-container">
               <h4 className="show-page-price">
                 <span className="show-page-price-span">${price}</span>{" "}
@@ -239,6 +234,9 @@ function PropertyShowPage() {
               <NewReservationForm />
             </div>
           </section>
+        </section>
+        <section className="bottom-show-page-container">
+
         </section>
       </div>
     );

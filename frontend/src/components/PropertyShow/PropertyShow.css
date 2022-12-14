@@ -91,18 +91,18 @@
     border-bottom: 1px solid rgb(230, 230, 230);
 }
 
-.bottom-show-page-container {
+.mid-show-page-container {
         width: 816px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
 }
 
-.bottom-left-show-page-info-container {
+.mid-left-show-page-info-container {
     width: 466px;
 }
 
-.bottom-right-show-page-info-container {
+.mid-right-show-page-info-container {
     width: 400px;
 }
 
