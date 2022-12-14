@@ -13,6 +13,9 @@ export const addProperty = (property) => ({
   payload: property,
 });
 
+export const getProperties = (state) =>
+  state.properties ? Object.values(state.properties) : [];
+
 export const fetchProperties = () => async (dispatch) => {
   const response = await csrfFetch(`/api/properties`);
   const data = await response.json();
