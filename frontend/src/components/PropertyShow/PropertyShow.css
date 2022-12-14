@@ -84,9 +84,11 @@
 
 .show-page-description {
     font-size: 14px;
+    line-height: 18px;
     font-weight: 300;
-    padding-top: 28px;
+    padding: 24px 0px;
     width: 466px;
+    border-bottom: 1px solid rgb(230, 230, 230);
 }
 
 .bottom-show-page-container {
@@ -225,3 +227,43 @@ label {
     
 }
 
+.offering-icon {
+    height: 24px;
+    margin: 3px 8px;
+}
+
+.offering-container {
+    color: #444444;
+    font-size: 13px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.what-this-place-offers-content-container {
+    display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+}
+
+.what-this-place-offers-container {
+    padding: 24px 0px;
+}
+
+.what-this-place-offers-heading {
+    margin-bottom: 12px;
+    font-weight: 500;
+}
+
+.aircover-icon {
+    width: 90px;
+    margin-bottom: 10px;
+}
+
+.aircover-container {
+border-bottom: 1px solid rgb(230, 230, 230);
+padding: 24px 0px;
+font-size: 14px;
+    line-height: 18px;
+    font-weight: 300;
+}

@@ -3,6 +3,17 @@ import { useParams } from "react-router-dom";
 import NewReservationForm from "../NewReservationForm";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProperty } from "../../store/properties";
+import wifi from "../../assets/amenities_icons/wifi.png"
+import kitchen from "../../assets/amenities_icons/kitchen.png";
+import washer from "../../assets/amenities_icons/washer.png";
+import parking from "../../assets/amenities_icons/parking.png";
+import gym from "../../assets/amenities_icons/gym.png";
+import entertaining from "../../assets/amenities_icons/entertaining.png";
+import bar from "../../assets/amenities_icons/bar.png";
+import psychic from "../../assets/amenities_icons/psychic.png";
+import peacock from "../../assets/amenities_icons/peacock.png";
+import syringe from "../../assets/amenities_icons/syringe.png";
+import aircover from "../../assets/images/aircover.webp"
 import "./PropertyShow.css";
 
 function PropertyShowPage() {
@@ -121,6 +132,98 @@ function PropertyShowPage() {
               </div>
             </div>
             <div className="show-page-description">{description}</div>
+            <div className="aircover-container">
+              <div className="aircover-icon-container">
+                <img className="aircover-icon" src={aircover} />
+              </div>
+              <div className="aircover-copy-container">
+                Every booking includes free protection from Host cancellations,
+                listing inaccuracies, and other drama like trouble checking in.
+              </div>
+            </div>
+            <div className="what-this-place-offers-container">
+              <div className="what-this-place-offers-heading-container">
+                <h5 className="what-this-place-offers-heading">
+                  What this place offers
+                </h5>
+              </div>
+              <div className="what-this-place-offers-content-container">
+                <div className="left-what-this-place-offers-content-container">
+                  <div className="offering-container">
+                    <div className="offering-icon-container">
+                      <img className="offering-icon" src={wifi} />
+                    </div>
+                    <div className="offering-copy-container">Wifi</div>
+                  </div>
+                  <div className="offering-container">
+                    <div className="offering-icon-container">
+                      <img className="offering-icon" src={kitchen} />
+                    </div>
+                    <div className="offering-copy-container">Kitchen</div>
+                  </div>
+                  <div className="offering-container">
+                    <div className="offering-icon-container">
+                      <img className="offering-icon" src={washer} />
+                    </div>
+                    <div className="offering-copy-container">Washer/dryer</div>
+                  </div>
+                  <div className="offering-container">
+                    <div className="offering-icon-container">
+                      <img className="offering-icon" src={parking} />
+                    </div>
+                    <div className="offering-copy-container">Parking</div>
+                  </div>
+                  <div className="offering-container">
+                    <div className="offering-icon-container">
+                      <img className="offering-icon" src={gym} />
+                    </div>
+                    <div className="offering-copy-container">
+                      Fitness studio
+                    </div>
+                  </div>
+                </div>
+                <div className="right-what-this-place-offers-content-container">
+                  <div className="offering-container">
+                    <div className="offering-icon-container">
+                      <img className="offering-icon" src={entertaining} />
+                    </div>
+                    <div className="offering-copy-container">
+                      Entertaining space
+                    </div>
+                  </div>
+                  <div className="offering-container">
+                    <div className="offering-icon-container">
+                      <img className="offering-icon" src={bar} />
+                    </div>
+                    <div className="offering-copy-container">Open bar</div>
+                  </div>
+                  <div className="offering-container">
+                    <div className="offering-icon-container">
+                      <img className="offering-icon" src={psychic} />
+                    </div>
+                    <div className="offering-copy-container">
+                      Psychic Readings
+                    </div>
+                  </div>
+                  <div className="offering-container">
+                    <div className="offering-icon-container">
+                      <img className="offering-icon" src={peacock} />
+                    </div>
+                    <div className="offering-copy-container">
+                      Free streaming with Peacock
+                    </div>
+                  </div>
+                  <div className="offering-container">
+                    <div className="offering-icon-container">
+                      <img className="offering-icon" src={syringe} />
+                    </div>
+                    <div className="offering-copy-container">
+                      Free Botox referral
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </section>
           <section className="bottom-right-show-page-container">
             <div className="show-page-reservation-form-container">
