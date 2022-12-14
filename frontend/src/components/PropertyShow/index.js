@@ -202,7 +202,7 @@ function PropertyShowPage() {
                       <img className="offering-icon" src={psychic} />
                     </div>
                     <div className="offering-copy-container">
-                      Psychic Readings
+                      Psychic readings
                     </div>
                   </div>
                   <div className="offering-container">

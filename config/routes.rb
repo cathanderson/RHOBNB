@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resource :session, only: [:create, :show, :destroy]
     resources :properties, only: [:index, :show]
     resources :reservations, only: [:index, :show, :create, :update, :destroy]
+    resources :reviews, only: [:index, :show, :create]
   end
 
   # make sure this is below other rotes
