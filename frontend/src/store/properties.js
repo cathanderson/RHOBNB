@@ -34,7 +34,7 @@ export const fetchProperty = (propertyId) => async (dispatch) => {
 };
 
 export const fetchPropertiesByFranchise = (rh_franchise) => async (dispatch) => {
-  const res = await csrfFetch(
+  const response = await csrfFetch(
     "/api/properties?" + new URLSearchParams({ rh_franchise }),
     {
       method: "GET",
@@ -43,7 +43,7 @@ export const fetchPropertiesByFranchise = (rh_franchise) => async (dispatch) => 
       },
     }
   );
-  const data = await res.json();
+  const data = await response.json();
   dispatch(setProperties(data.properties));
 };
 

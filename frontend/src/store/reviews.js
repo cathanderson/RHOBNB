@@ -37,12 +37,26 @@ export const fetchReview = (reviewId) => async (dispatch) => {
   return response;
 };
 
+export const fetchReviewsByProperty = (propertyId) => async (dispatch) => {
+  const response = await csrfFetch(
+    "/api/reviews?" + new URLSearchParams({ propertyId }),
+    {
+      method: "GET",
+      headers: {
+        "content-type": "application/json",
+      },
+    }
+  );
+  const data = await response.json();
+  dispatch(setReviews(data.reviews));
+};
+
 function reviewsReducer(state = {}, action) {
   const newState = { ...state };
 
   switch (action.type) {
     case SET_REVIEWS:
-      return { ...newState, ...action.payload };
+      return { ...action.payload };
     case ADD_REVIEW:
       // debugger
       if (action.payload !== undefined) {

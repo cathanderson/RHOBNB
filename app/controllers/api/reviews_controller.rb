@@ -2,7 +2,12 @@ class Api::ReviewsController < ApplicationController
     wrap_parameters include: Review.attribute_names
 
     def index
-        @reviews = Review.all.where(property_id: params[:id])
+        if params[:property_id] == nil
+            @reviews = Review.all
+        else
+            @reviews = Review.where(property_id: params[:property_id])
+            # debugger
+        end
         render :index
     end
 
@@ -25,7 +30,7 @@ class Api::ReviewsController < ApplicationController
     private
 
     def review_params
-        params.require(:review).permit(:guest_id, :property_id, , :rating, :review)
+        params.require(:review).permit(:guest_id, :property_id, :rating, :review)
     end
     
 end

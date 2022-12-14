@@ -10,6 +10,7 @@ import * as sessionActions from "./store/session";
 import { ModalProvider } from "./context/Modal";
 import * as propertyActions from "./store/properties";
 import * as reservationActions from "./store/reservations";
+import * as reviewActions from "./store/reviews"
 
 const store = configureStore();
 
@@ -31,6 +32,7 @@ if (process.env.NODE_ENV !== "production") {
   window.sessionActions = sessionActions;
   window.propertyActions = propertyActions;
   window.reservationActions = reservationActions;
+  window.reviewActions = reviewActions;
 }
 
 const renderApplication = () => {

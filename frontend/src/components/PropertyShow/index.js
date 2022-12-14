@@ -15,6 +15,8 @@ import peacock from "../../assets/amenities_icons/peacock.png";
 import syringe from "../../assets/amenities_icons/syringe.png";
 import aircover from "../../assets/images/aircover.webp"
 import "./PropertyShow.css";
+import { fetchReviewsByProperty, getReviews } from "../../store/reviews";
+
 
 function PropertyShowPage() {
   const dispatch = useDispatch();
@@ -23,9 +25,12 @@ function PropertyShowPage() {
   // debugger
   useEffect(() => {
     dispatch(fetchProperty(id));
+    dispatch(fetchReviewsByProperty(id))
   }, [id, dispatch]);
 
   const property = useSelector((state) => state.properties[id]);
+  const reviews = useSelector(getReviews)
+  console.log(reviews)
   // debugger
 
   // console.log(property.photoUrls);
