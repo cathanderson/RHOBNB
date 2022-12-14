@@ -10,6 +10,7 @@ import { useState, React } from "react";
 import rhobnbMapStyles from "./GoogleMapsStyles";
 import house from "../../assets/images/home-icon-silhouette.png"
 import pin from "../../assets/images/placeholder.png";
+import { Link } from "react-router-dom";
 
 const MapContainer = ({ rh_franchise }) => {
   const properties = useSelector(getProperties);
@@ -60,6 +61,7 @@ const MapContainer = ({ rh_franchise }) => {
         lng: property.lng,
         lat: property.lat,
       },
+      id: property.id,
     };
   });
 
@@ -94,7 +96,7 @@ const MapContainer = ({ rh_franchise }) => {
             clickable={true}
             onCloseClick={() => setSelected({})}
           >
-            <p>{selected.name}</p>
+              <Link className="map-property-link" to={`/properties/${selected.id}`}>{selected.name}</Link>
           </InfoWindow>
         )}
       </GoogleMap>
