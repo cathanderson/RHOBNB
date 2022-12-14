@@ -1,68 +1,29 @@
-// import React from "react";
-// import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-// import { useSelector } from "react-redux";
-// import { getProperties } from "../../store/properties";
-
-// const MapContainer = ({ rh_franchise }) => {
-//   const properties = useSelector(getProperties);
-//   console.log(properties[0].lng);
-
-//   let locations;
-//   let defaultCenter;
-//   let zoomAmount;
-
-//   if (rh_franchise === "rhony") {
-//     locations = [
-//       {
-//         name: properties[0].property_name,
-//         location: {
-//           lng: properties[0].lng,
-//           lat: properties[0].lat,
-//         },
-//       },
-//     ];
-//     defaultCenter = {
-//       lng: -73.98017854605482,
-//       lat: 40.75825220218335,
-//     };
-//     zoomAmount = 10;
-//   }
-
-//   const mapStyles = {
-//     height: "100vh",
-//     width: "100%",
-//   };
-
-//   return (
-//     <LoadScript googleMapsApiKey={process.env.REACT_APP_MAPS_API_KEY}>
-//       <GoogleMap
-//         mapContainerStyle={mapStyles}
-//         zoom={zoomAmount}
-//         center={defaultCenter}
-//       >
-//         {locations.map((item) => {
-//           return <Marker key={item.name} position={item.location} />;
-//         })}
-//       </GoogleMap>
-//     </LoadScript>
-//   );
-// };
-
-// export default MapContainer;
-
-
-import React from "react";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import {
+  GoogleMap,
+  LoadScript,
+  Marker,
+  InfoWindow,
+} from "@react-google-maps/api";
 import { useSelector } from "react-redux";
 import { getProperties } from "../../store/properties";
+import { useState, React } from "react";
+import rhobnbMapStyles from "./GoogleMapsStyles";
+import house from "../../assets/images/home-icon-silhouette.png"
+import pin from "../../assets/images/placeholder.png";
 
 const MapContainer = ({ rh_franchise }) => {
   const properties = useSelector(getProperties);
 
+  const [selected, setSelected] = useState({});
+
+  const onSelect = (item) => {
+    setSelected(item);
+  };
+
   let defaultCenters = {
     rhony: {
-      lng: -73.98017854605482,
-      lat: 40.75825220218335,
+      lng: -73.98772938211399,
+      lat: 40.74694716164171,
     },
     rhonj: {
       lng: -74.19496009763303,
@@ -83,7 +44,7 @@ const MapContainer = ({ rh_franchise }) => {
   };
 
   let zoomAmounts = {
-    rhony: 12.5,
+    rhony: 13,
     rhonj: 10.5,
     rhobh: 10.45,
     rhoslc: 10.45,
@@ -102,8 +63,6 @@ const MapContainer = ({ rh_franchise }) => {
     };
   });
 
-  console.log(defaultCenters);
-
   const mapStyles = {
     height: "100vh",
     width: "100%",
@@ -115,10 +74,29 @@ const MapContainer = ({ rh_franchise }) => {
         mapContainerStyle={mapStyles}
         zoom={zoomAmounts[rh_franchise]}
         center={defaultCenters[rh_franchise]}
+        options={{
+          styles: rhobnbMapStyles,
+        }}
       >
         {Object.values(locations).map((item) => {
-          return <Marker key={item.name} position={item.location} />;
+          return (
+            <Marker
+              key={item.name}
+              position={item.location}
+              onClick={() => onSelect(item)}
+              icon={pin}
+            />
+          );
         })}
+        {selected.location && (
+          <InfoWindow
+            position={selected.location}
+            clickable={true}
+            onCloseClick={() => setSelected({})}
+          >
+            <p>{selected.name}</p>
+          </InfoWindow>
+        )}
       </GoogleMap>
     </LoadScript>
   );
