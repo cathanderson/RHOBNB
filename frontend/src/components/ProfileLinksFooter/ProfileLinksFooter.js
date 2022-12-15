@@ -13,6 +13,8 @@ function ProfileLinksFooter() {
             <span className="footer-separator"> · </span>
             <span className="footer-span">Ruby</span>
             <span className="footer-separator"> · </span>
+            <span className="footer-span">AWS</span>
+            <span className="footer-separator"> · </span>
             <span className="footer-span">Google Maps API</span>
           </div>
           <div className="right-footer-container">
