@@ -9,6 +9,7 @@
 require "open-uri"
 
 puts "Destroying existing tables..."
+Review.destroy_all
 Property.destroy_all
 Reservation.destroy_all
 User.destroy_all
@@ -18,6 +19,7 @@ puts "Resetting primary keys..."
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('properties')
 ActiveRecord::Base.connection.reset_pk_sequence!('reservations')
+ActiveRecord::Base.connection.reset_pk_sequence!('reviews')
 
 
 puts "Creating users..."
