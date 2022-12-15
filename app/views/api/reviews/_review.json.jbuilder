@@ -3,4 +3,9 @@ json.extract! review,
             :guest_id,
             :property_id,
             :rating, 
-            :review
+            :review,
+            :reviewer_name,
+            :review_date
+
+
+json.photoUrl review.photo.url

@@ -1,0 +1,74 @@
+.reviews-list-item-image {
+    width: 42px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.reviews-list-title {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 20px 0px;
+}
+
+.outtermost-reviews-list-item-container {
+    display: flex;
+    flex-direction: column;
+    width: 360px;
+    margin: 0px 6px 28px 6px;
+}
+
+.top-reviews-list-item-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-left-reviews-list-item-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.reviews-list-item-rating-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.reviews-list-item-name-date-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.reviews-list-item-star-icon {
+    height: 13px;
+    margin: 0px 2.5px;
+}
+
+.reviews-list-item-name {
+    font-weight: 600;
+}
+
+.reviews-list-item-date {
+    color: gray;
+    margin-top: 3.5px;
+    font-size: 13.5px;
+}
+
+.reviews-list-item-review {
+    margin-top: 6px;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+.inner-reviews-list-items-container {
+    margin-left: 3.5%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 300px;
+    column-gap: 42px;
+    justify-content: space-between;
+}

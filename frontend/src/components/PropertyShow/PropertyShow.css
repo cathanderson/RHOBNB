@@ -267,3 +267,11 @@ font-size: 14px;
     line-height: 18px;
     font-weight: 300;
 }
+
+.bottom-show-page-container {
+    border-top: 1px solid rgb(230, 230, 230);
+    width: 816px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

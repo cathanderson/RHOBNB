@@ -963,9 +963,15 @@ reservation3 = Reservation.create!(guest_id: dorinda.id, property_id: sonja_town
 
 puts "Writing reviews..."
 
-review1 = Review.create!(guest_id: cath.id, property_id: dorinda_ues.id, rating: 5, review: "Perfect for a girls trip to New York City, so glad I actually got to meet the hostess in real life!")
-review2 = Review.create!(guest_id: cath.id, property_id: dorinda_ues.id, rating: 4, review: "...I hate to admit it, but I sang cabaret and tried on some of the hostess' Jovani numbers during my stay. Hope she doesn't mind!")
-review3 = Review.create!(guest_id: cath.id, property_id: dorinda_ues.id, rating: 5, review: "Great collection of art and a super convenient location!")
+review1 = Review.create!(guest_id: cath.id, reviewer_name: cath.first_name, property_id: dorinda_ues.id, rating: 5, review: "Perfect for a girls trip to New York City, so glad I actually got to meet the hostess in real life!", review_date: "October 2022")
+review2 = Review.create!(guest_id: luann.id, reviewer_name: luann.first_name, property_id: dorinda_ues.id, rating: 4, review: "...I hate to admit it, but I sang cabaret and tried on some of the hostess' Jovani numbers during my stay. Hope she doesn't mind!", review_date: "May 2022")
+review3 = Review.create!(guest_id: carole.id, reviewer_name: carole.first_name, property_id: dorinda_ues.id, rating: 5, review: "Great collection of art and a super convenient location!", review_date: "January 2022")
+review4 = Review.create!(guest_id: cath.id, reviewer_name: cath.first_name, property_id: bethenny_soho.id, rating: 5, review: "What an incredible apartment! The hostess did an incredible job renovating this place.", review_date: "November 2022")
+
+review1.photo.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/wives/rhonj/cath.png'), filename: 'cath.png')
+review2.photo.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/wives/rhony/luann.jpg'), filename: 'luann.jpg')
+review3.photo.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/wives/rhony/carole.jpg'), filename: 'carole.jpg')
+review4.photo.attach(io: URI.open('https://rhobnb-seeds.s3.amazonaws.com/rhobnb_media/wives/rhonj/cath.png'), filename: 'cath.png')
 
 puts "Done!"
 
