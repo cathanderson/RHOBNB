@@ -16,6 +16,7 @@ import syringe from "../../assets/amenities_icons/syringe.png";
 import aircover from "../../assets/images/aircover.webp"
 import "./PropertyShow.css";
 import { fetchReviewsByProperty, getReviews } from "../../store/reviews";
+import ReviewsList from "../ReviewsList/ReviewsList";
 
 
 function PropertyShowPage() {
@@ -236,7 +237,7 @@ function PropertyShowPage() {
           </section>
         </section>
         <section className="bottom-show-page-container">
-
+          <ReviewsList reviews={reviews} />
         </section>
       </div>
     );
