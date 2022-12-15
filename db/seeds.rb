@@ -180,7 +180,7 @@ dorinda_bm = Property.create!({
 bethenny_montauk = Property.create!({
     host_id: bethenny.id,
     host_name: 'Bethenny',
-    property_name: 'Bethenny’s Montauk Home',
+    property_name: 'Bethenny’s Montauk House',
     description: "Mention it all during your stay at Bethenny’s beach house. Steps from Montauk Hwy.", 
     city: 'Montauk',
     state: 'New York',
@@ -195,7 +195,7 @@ bethenny_montauk = Property.create!({
 luann_sag = Property.create!({
     host_id: bethenny.id,
     host_name: 'Luann',
-    property_name: "Luann's Sag Harbor Home",
+    property_name: "Luann's Sag Harbor House",
     description: "If you can’t be cool, you can’t be with the Countess at this beautiful home in Sag Harbor.", 
     city: 'Sag Harbor',
     state: 'New York',
@@ -227,7 +227,7 @@ teresa_old = Property.create!({
 teresa_new = Property.create!({
     host_id: teresa.id,
     host_name: 'Teresa',
-    property_name: "Teresa and Louie’s Home",
+    property_name: "Teresa and Louie’s House",
     description: "Jersey’s original love bubble! Pineapple snacks included in guest welcome package.", 
     city: 'Montville',
     state: 'New Jersey',
@@ -257,7 +257,7 @@ melissa_old = Property.create!({
 margaret_englewood = Property.create!({
     host_id: margaret.id,
     host_name: 'Margaret',
-    property_name: "Margaret and Joe B's Home",
+    property_name: "Margaret and Joe B's House",
     description: "This newly renovated home with chic and unique finishes brings the power, the pigtails, and the party.", 
     city: 'Englewood',
     state: 'New Jersey',
@@ -302,7 +302,7 @@ dolores_montvale = Property.create!({
 gorgas_shore = Property.create!({
     host_id: melissa.id,
     host_name: 'Melissa',
-    property_name: "Gorgas’ Shore House",
+    property_name: "Gorga Family Shore House",
     description: "Book your stay here and enjoy a trip to the shore that most girls only dream of.", 
     city: "Tom’s River",
     state: 'New Jersey',
@@ -334,7 +334,7 @@ jackie_westhampton = Property.create!({
 diana_hidden_hills = Property.create!({
     host_id: diana.id,
     host_name: 'Diana',
-    property_name: 'Diana and Asher’s Home',
+    property_name: 'Diana and Asher’s House',
     description: "Free live performances by Asher Jenkins available upon request.", 
     city: 'Hidden Hills',
     state: 'California',
@@ -529,7 +529,7 @@ vanderpump_beverly_hills = Property.create!({
 yolanda_malibu = Property.create!({
     host_id: yolanda.id,
     host_name: 'Yolanda',
-    property_name: "Yolanda and David Foster’s House",
+    property_name: "Hadid/Foster Family Home",
     description: "Be a part of Yolanda’s dream team by booking your stay here! Property highlights include: glass fridge and oceanfront views. Fake friends who believe rumors not welcome.", 
     city: 'Malibu',
     state: 'California',
@@ -609,7 +609,7 @@ meredith_park_city = Property.create!({
     host_id: meredith.id,
     host_name: 'Meredith',
     property_name: "Marks Family Home",
-    description: "Book your stay to see the host’s bone collection (…and unfinished basement).", 
+    description: "Perfect place to disengage from your girlfriends’ drama...", 
     city: 'Park City',
     state: 'Utah',
     price: 590,
