@@ -3,11 +3,10 @@ import { useSelector } from "react-redux";
 import LoggedInNav from "./LoggedInNav";
 import LoggedOutNav from "./LoggedOutNav";
 import "./Navigation.css";
-import LoginFormModal from "../LoginFormModal";
 import NavSearch from "./NavSearch.js";
 import { Link } from "react-router-dom";
 import dress from "../../assets/images/dress.png"
-import wdress from "../../assets/images/wedding-dress.png";
+
 
 function Navigation() {
   const sessionUser = useSelector((state) => state.session.user);
@@ -30,7 +29,6 @@ function Navigation() {
         </Link>
         <NavSearch />
         {sessionNav}
-        {/* <LoginFormModal/>  */}
       </nav>
     </>
   );

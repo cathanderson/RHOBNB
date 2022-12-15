@@ -1,0 +1,36 @@
+.outter-footer-container {
+    border-top: 1px solid rgb(230, 230, 230);
+    /* font-family: 'Montserrat',
+            sans-serif; */
+    font-family: Circular,
+        -apple-system,
+        BlinkMacSystemFont,
+        Roboto,
+        Helvetica Neue,
+        sans-serif;
+    color: rgb(91, 91, 91);
+    position: sticky;
+    bottom: 0px;
+    background-color: white;
+    z-index: 10;
+    padding: 18px 0px;
+    font-size: 12px;
+
+}
+
+.inner-footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0% 5%;
+}
+
+.left-footer-container,
+.right-footer-container {
+    text-align: center;
+}
+
+.footer-span-link {
+    text-decoration: none;
+    color: rgb(91, 91, 91);
+}

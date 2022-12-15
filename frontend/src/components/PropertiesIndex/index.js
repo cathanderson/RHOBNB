@@ -6,7 +6,6 @@ import "./PropertiesIndex.css";
 import PropertyFranchiseBar from "../PropertyFranchiseBar";
 import { useParams } from "react-router-dom";
 import MapContainer from "../MapContainer";
-import ProfileLinksFooter from "./ProfileLinksFooter";
 
 
 function PropertiesIndex() {
@@ -26,8 +25,9 @@ function PropertiesIndex() {
     return (
       <>
         <PropertyFranchiseBar />
-        <PropertiesList properties={properties} />
-        <ProfileLinksFooter />
+        <main id="properties-list-and-map-container">
+          <PropertiesList properties={properties} />
+        </main>
       </>
     );
   } else {
@@ -36,9 +36,8 @@ function PropertiesIndex() {
         <PropertyFranchiseBar />
         <main id="properties-list-and-map-container">
           <PropertiesList properties={properties} />
-          <MapContainer rh_franchise={rh_franchise} />
+            <MapContainer rh_franchise={rh_franchise} />
         </main>
-        <ProfileLinksFooter/>
       </>
     );
   }

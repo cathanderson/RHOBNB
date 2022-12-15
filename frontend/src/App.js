@@ -5,6 +5,7 @@ import PropertiesIndex from "./components/PropertiesIndex";
 import PropertyShowPage from "./components/PropertyShow";
 import ReservationsIndex from "./components/ReservationsIndex";
 import ReservationShow from "./components/ReservationShow";
+import ProfileLinksFooter from "./components/ProfileLinksFooter/ProfileLinksFooter";
 
 function App() {
   return (
@@ -13,18 +14,23 @@ function App() {
       <Switch>
         <Route exact path="/">
           <PropertiesIndex />
+          <ProfileLinksFooter />
         </Route>
         <Route path="/properties/:id">
           <PropertyShowPage />
+          <ProfileLinksFooter />
         </Route>
         <Route exact path="/reservations">
           <ReservationsIndex />
+          <ProfileLinksFooter />
         </Route>
         <Route path="/reservations/:id">
           <ReservationShow />
+          <ProfileLinksFooter />
         </Route>
         <Route path="/:rh_franchise">
           <PropertiesIndex />
+          <ProfileLinksFooter />
         </Route>
       </Switch>
     </>

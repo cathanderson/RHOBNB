@@ -60,49 +60,20 @@
 #properties-list-and-map-container {
     display: flex;
     flex-direction: row;
+    max-width: 2500px;
+    margin: 0% 2%;
 }
 
 #properties-list-and-map-container section {
     width: 1900px;
 }
 
-/* #properties-list-and-map-container:nth-child(3) {
-    margin-top: 30px;
-} */
+
 
 .map-property-link {
     text-decoration: none;
     color: #222222;
 }
 
-.outter-footer-container {
-    border-top: 1px solid rgb(230, 230, 230);
-    /* font-family: 'Montserrat',
-            sans-serif; */
-    font-family: Circular,
-        -apple-system,
-        BlinkMacSystemFont,
-        Roboto,
-        Helvetica Neue,
-        sans-serif;
-    color: rgb(91, 91, 91);
-    position: sticky;
-    bottom: 0px;
-    background-color: white;
-    z-index: 10;
-    padding: 18px 0px;
-    font-size: 15px;
 
-}
-
-.inner-footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0% 5%;
-}
-
-.left-footer-container, .right-footer-container {
-    text-align: center;
-}
 
