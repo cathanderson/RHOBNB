@@ -1,14 +1,23 @@
 import React from "react";
 import ReviewsListItem from "./ReviewsListItem";
+import star from "../../assets/images/star.png"
 import "./Reviews.css"
 
 function ReviewsList({ reviews }) {
 
-  // calculateAvgRating = (numReviews, ) => {
+  let calculateAvgRating = (numReviews, ratingsArr) => {
+    let totalRatingSum = 0;
+    ratingsArr.forEach((rating)=> {totalRatingSum += rating})
+    return ((totalRatingSum / numReviews).toFixed(2))
+  }
 
-  // }
+  let currRatingsArr = []
 
-  // let avgRating = 
+  reviews.forEach((review) => {
+    currRatingsArr.push(review.rating)
+  });
+
+  let avgRating = calculateAvgRating(reviews.length, currRatingsArr);
 
   if (reviews.length === 0) {
     return (
@@ -22,7 +31,16 @@ function ReviewsList({ reviews }) {
     return (
       <div className="outtermost-reviews-list-container">
         <div className="reviews-list-title-container">
-          <h2 className="reviews-list-title">{reviews.length} reviews</h2>
+          <h2 className="reviews-list-title">
+            <span className="left-reviews-list-title">
+              <img src={star} className="reviews-list-title-star" />
+              {avgRating}
+            </span>{" "}
+            ·{" "}
+            <span className="right-reviews-list-title">
+              {reviews.length} reviews
+            </span>
+          </h2>
         </div>
         <div className="outter-reviews-list-items-container">
           <div className="inner-reviews-list-items-container">

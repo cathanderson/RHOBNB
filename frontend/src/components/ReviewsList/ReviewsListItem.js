@@ -2,7 +2,7 @@ import React from "react";
 import star from "../../assets/images/star.png";
 
 function ReviewsListItem({ review }) {
-  console.log(review);
+  // console.log(review);
 
   return (
     <div className="outtermost-reviews-list-item-container">

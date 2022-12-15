@@ -5,9 +5,9 @@
 }
 
 .reviews-list-title {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 500;
-    margin: 20px 0px;
+    margin: 22px 0px;
 }
 
 .outtermost-reviews-list-item-container {
@@ -71,4 +71,17 @@
     max-height: 300px;
     column-gap: 42px;
     justify-content: space-between;
+}
+
+.reviews-list-title-star {
+    height: 16px;
+    margin-right: 5px;
+}
+
+.left-reviews-list-title {
+    margin: 0px 3.5px;
+}
+
+.right-reviews-list-title {
+    margin-left: 3.5px;
 }
