@@ -1,23 +1,32 @@
 import React from "react";
 import ReviewsListItem from "./ReviewsListItem";
-import star from "../../assets/images/star.png"
-import "./Reviews.css"
+import star from "../../assets/images/star.png";
+import "./Reviews.css";
 
 function ReviewsList({ reviews }) {
-
   let calculateAvgRating = (numReviews, ratingsArr) => {
     let totalRatingSum = 0;
-    ratingsArr.forEach((rating)=> {totalRatingSum += rating})
-    return ((totalRatingSum / numReviews).toFixed(2))
-  }
+    ratingsArr.forEach((rating) => {
+      totalRatingSum += rating;
+    });
+    return (totalRatingSum / numReviews).toFixed(2);
+  };
 
-  let currRatingsArr = []
+  let currRatingsArr = [];
 
   reviews.forEach((review) => {
-    currRatingsArr.push(review.rating)
+    currRatingsArr.push(review.rating);
   });
 
   let avgRating = calculateAvgRating(reviews.length, currRatingsArr);
+
+  let rightReviewsListTitle;
+
+  if (reviews.length === 1) {
+    rightReviewsListTitle = <span className="right-reviews-list-title">1 review</span>;
+  } else {
+    rightReviewsListTitle = <span className="right-reviews-list-title">{reviews.length} reviews</span>;
+  }
 
   if (reviews.length === 0) {
     return (
@@ -37,9 +46,7 @@ function ReviewsList({ reviews }) {
               {avgRating}
             </span>{" "}
             ·{" "}
-            <span className="right-reviews-list-title">
-              {reviews.length} reviews
-            </span>
+              {rightReviewsListTitle}
           </h2>
         </div>
         <div className="outter-reviews-list-items-container">

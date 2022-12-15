@@ -103,7 +103,11 @@
 }
 
 .mid-right-show-page-info-container {
-    width: 400px;
+    width: 400px; 
+}
+
+.mid-right-show-page-container {
+    padding-bottom: 27px;
 }
 
 /* .reservation-form {
@@ -161,7 +165,10 @@
     padding: 30px 20px 30px 20px;
     border-radius: 14px;
     box-shadow: 3px 3px 3px rgb(227, 227, 227);
-    margin: 20px 0px 40px 50px;
+    margin: 20px 0px 0px 50px;
+    position: sticky;
+    top: 20px;
+    bottom: 20px;
 }
 
 .show-page-price-span {
@@ -274,4 +281,5 @@ font-size: 14px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 100px;
 }
