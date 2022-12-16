@@ -32,7 +32,7 @@ This project will be implemented with the following technologies:
 ### **Technical Highlights** ⚡️
 
 #### **Sorting properties by franchise with dynamic map updates**
-![Sorting](./src/assets/images/rhobnb-sr1.gif)
+![Sorting](./frontend/src/assets/images/rhobnb-sr1.gif)
 
 Just like the real Airbnb, RHOBNB's splash page is a pure properties index page without a map. The real Airbnb has many icons with activities/settings to sort homes by and upon clicking one of those icons, the site filters property results by that activity/setting. With RHOBNB being based on a TV phenomenon associated with dozens of different cities ("franchises"), I figured it'd be a fun idea to give my users the ability to filter their property results by city/franchise.
 
@@ -136,7 +136,7 @@ const MapContainer = ({ rh_franchise }) => {
 ```
 
 #### **Reservation booking and show page**
-![Reservations](./src/assets/images/rhobnb-sr2.gif)
+![Reservations](./frontend/src/assets/images/rhobnb-sr2.gif)
 
 Upon booking a reservation at one of the site properties, the user is automatically taken to a page displaying their pre-existing reservations plus the reservation they just booked. They can then select whichever reservation they'd like to see more details on which leads them to a reservation show page with a map custom fit to the booked property's longitude/latitude coordinates.
 
