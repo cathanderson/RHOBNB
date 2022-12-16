@@ -15,9 +15,7 @@ function ReservationShow() {
     useState(false);
   const history = useHistory();
 
-  // debugger
   useEffect(() => {
-    // debugger
     dispatch(fetchReservation(id));
   }, [id, dispatch]);
 
@@ -27,7 +25,6 @@ function ReservationShow() {
     return null;
   }
 
-  // console.log(reservation.property);
 
   const { guestId, propertyId, checkInDate, checkOutDate, numGuests } =
     reservation;
