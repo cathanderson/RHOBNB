@@ -1,76 +1,205 @@
+## RHOBNB
 
-# Create React App Template
+***
 
-A no-frills template from which to create React applications with
-[Create React App](https://github.com/facebook/create-react-app).
+### **Background** 🏞
 
-```sh
-npx create-react-app my-app --template @appacademy/simple --use-npm
+[RHOBNB](https://rhobnb.onrender.com/) is a *Real Housewives* themed full-stack clone of the property booking website Airbnb.
+
+***
+
+
+### **Functionality & MVPs** 🏋🏼‍♀️
+
+1. Full user authentication *(including error handling!)* and ability to create new accounts
+2. Live hosting on [rhobnb.render.com](https://rhobnb.onrender.com/)
+3. Ability to browse properties owned by current and former *Real Housewives* of New York, New Jersey, Beverly Hills, Salt Lake City, and Atlanta
+4. Ability to reserve properties as well as modify and cancel existing reservations
+5. *(Ficticious)* home location data with the help of Google Maps API
+6. Users can view reviews made by previous home guests on applicable property show pages
+
+***
+### **Technologies, Libraries, and APIs** 👩🏼‍💻
+
+This project will be implemented with the following technologies:
+
+- Ruby on Rails, React/Redux, Javascript, HTML, and CSS 
+- PostgreSQL and Amazon Web Services
+- Google Maps API 
+- Webpack and npm
+
+***
+### **Technical Highlights** ⚡️
+
+#### **Sorting properties by franchise with dynamic map updates**
+![Sorting](./src/assets/images/rhobnb-sr1.gif)
+
+Just like the real Airbnb, RHOBNB's splash page is a pure properties index page without a map. The real Airbnb has many icons with activities/settings to sort homes by and upon clicking one of those icons, the site filters property results by that activity/setting. With RHOBNB being based on a TV phenomenon associated with dozens of different cities ("franchises"), I figured it'd be a fun idea to give my users the ability to filter their property results by city/franchise.
+
+All told, this was a fun exercise in categorization/SQL querying on the backend as well as Google Maps manipulation on the frontend.
+
+*properties_controller.rb*
+```ruby...
+class Api::PropertiesController < ApplicationController
+    ...
+
+    def index
+        if params[:rh_franchise] == nil
+            @properties = Property.all
+        else
+            @properties = Property.where(rh_franchise: params[:rh_franchise])
+        end
+        render :index
+    end
+    ...
+end
 ```
 
-## Available Scripts
+*MapContainer.js*
+```js...
+const MapContainer = ({ rh_franchise }) => {
+  const properties = useSelector(getProperties);
 
-In the project directory, you can run:
+  ...
 
-### `npm start`
+  let defaultCenters = {
+    rhony: {
+      lng: -73.98772938211399,
+      lat: 40.74694716164171,
+    },
+    rhonj: {
+      lng: -74.19496009763303,
+      lat: 40.905374300770426,
+    },
+    rhobh: {
+      lng: -118.43215308090113,
+      lat: 34.06132233736488,
+    },
+    rhoslc: {
+      lng: -111.74122952661914,
+      lat: 40.653710288478784,
+    },
+    rhoa: {
+      lng: -84.25407173324143,
+      lat: 33.84412178411214,
+    },
+  };
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  let zoomAmounts = {
+    rhony: 13,
+    rhonj: 10.5,
+    rhobh: 10.45,
+    rhoslc: 10.45,
+    rhoa: 11,
+  };
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+  let locations = {};
 
-### `npm test`
+  properties.forEach((property) => {
+    locations[property.id] = {
+      name: property.propertyName,
+      location: {
+        lng: property.lng,
+        lat: property.lat,
+      },
+      id: property.id,
+    };
+  });
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  ...
 
-### `npm run build`
+  return (
+    <LoadScript googleMapsApiKey={process.env.REACT_APP_MAPS_API_KEY}>
+      <GoogleMap
+        mapContainerStyle={mapStyles}
+        zoom={zoomAmounts[rh_franchise]}
+        center={defaultCenters[rh_franchise]}
+        options={{
+          styles: rhobnbMapStyles,
+        }}
+      >
+        {Object.values(locations).map((item) => {
+          return (
+            <Marker
+              key={item.name}
+              position={item.location}
+              onClick={() => onSelect(item)}
+              icon={pin}
+            />
+          );
+        })}
+        ...
+      </GoogleMap>
+    </LoadScript>
+  );
+};
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### **Reservation booking and show page**
+![Reservations](./src/assets/images/rhobnb-sr2.gif)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Upon booking a reservation at one of the site properties, the user is automatically taken to a page displaying their pre-existing reservations plus the reservation they just booked. They can then select whichever reservation they'd like to see more details on which leads them to a reservation show page with a map custom fit to the booked property's longitude/latitude coordinates.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This was accomplished by passing the given reservation's ID from the show page URL parameters as a prop to a ReservationMap React component then manipulating the data for use in the accompanying Google map.
 
-### `npm run eject`
+*ReservationShow.js*
+```js...
+function ReservationShow() {
+  const dispatch = useDispatch();
+  const { id } = useParams();
+  ...
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+  useEffect(() => {
+    dispatch(fetchReservation(id));
+  }, [id, dispatch]);
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+  const reservation = useSelector((state) => state.reservations[id]);
+  ...
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+    return (
+    <>
+      <div className="reservation-show">
+        ...
+        <ReservationMapContainer reservation={reservation}/>
+      </div>
+    </>
+  );
+}
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+*ReservationMapContainer.js*
+```js...
+const ReservationMapContainer = ({ reservation }) => {
+  ...
 
-## Learn More
+  let defaultCenter = {
+    lng: reservation.property.lng,
+    lat: reservation.property.lat,
+  };
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  let location = {
+    name: reservation.property.property_name,
+    location: {
+      lng: reservation.property.lng,
+      lat: reservation.property.lat,
+    },
+  };
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+  ...
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  return (
+    <LoadScript googleMapsApiKey={process.env.REACT_APP_MAPS_API_KEY}>
+      <GoogleMap
+        mapContainerStyle={mapStyles}
+        zoom={16}
+        center={defaultCenter}
+        options={{
+          styles: ReservationMapStyles,
+        }}
+      >
+        ...
+      </GoogleMap>
+    </LoadScript>
+  );
+};
+```
