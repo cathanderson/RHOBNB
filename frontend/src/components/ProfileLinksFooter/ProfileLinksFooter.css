@@ -9,10 +9,11 @@
         Helvetica Neue,
         sans-serif;
     color: rgb(91, 91, 91);
-    position: sticky;
+    position: fixed;
     bottom: 0px;
+    left: 0px;
+    right: 0px;
     background-color: white;
-    z-index: 10;
     padding: 18px 0px;
     font-size: 12px;
 
