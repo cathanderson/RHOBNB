@@ -101,8 +101,8 @@
     padding: 5px 5px 5px 12px;
     background: transparent;
     /* cursor: pointer; */
-    margin-right: 95px;
-    margin-left: 140px;
+    margin-right: 75px;
+    margin-left: 130px;
     text-align: inherit;
     /* background-color: var(--f-mkcy-f); */
     border: 1px solid rgb(212, 212, 212);
@@ -110,7 +110,7 @@
     transition: box-shadow 0.2s ease;
     box-shadow: 2px 2px 2px rgb(230, 230, 230);
     height: 32px;
-    width: 298px;
+    width: 350px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -147,7 +147,8 @@
 .searchbar-add-guests {
     color: rgb(136, 135, 135);
     font-weight: 350;
-    padding-right: 12px;
+    /* padding-right: 12px; */
+    width: 136px;
 }
 
 .searchbar-fields {
@@ -156,7 +157,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 260px;
+    width: 300px;
     line-height: 24px;
 }
 #app-title-link {
