@@ -8,6 +8,7 @@ import * as reservationActions from "../../store/reservations";
 function EditReservationForm({ reservation, visible }) {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
+  console.log(reservation)
 
   let guest_id = null;
   if (sessionUser) {
@@ -15,17 +16,13 @@ function EditReservationForm({ reservation, visible }) {
   }
 
   const { id } = useParams();
-  const [check_in_date, setCheckInDate] = useState(reservation.check_in_date);
+  const [check_in_date, setCheckInDate] = useState(reservation.checkInDate);
   const [check_out_date, setCheckOutDate] = useState(
-    reservation.check_out_date
+    reservation.checkOutDate
   );
-  const [num_guests, setNumGuests] = useState(reservation.num_guests);
+  const [num_guests, setNumGuests] = useState(reservation.numGuests);
   const [errors, setErrors] = useState([]);
   const property_id = reservation.property_id;
-
-  //   if (!sessionUser) return <Redirect to="/" />;
-
-  //   debugger;
 
   const handleSubmit = (e) => {
     e.preventDefault();

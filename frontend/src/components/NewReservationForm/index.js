@@ -17,7 +17,6 @@ function NewReservationForm() {
   }
 
   const { id } = useParams();
-  // const [check_in_date, setCheckInDate] = useState("");
   const [check_in_date, setCheckInDate] = useState(
     moment().format("YYYY-MM-DD")
   );
