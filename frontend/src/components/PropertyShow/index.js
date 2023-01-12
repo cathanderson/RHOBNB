@@ -105,10 +105,6 @@ function PropertyShowPage() {
                 </div>
               </div>
             </li>
-            {/* <li className="show-page-price">
-            <span className="show-page-price-span">${price}</span>{" "}
-            <span className="show-page-night-span">night</span>
-          </li> */}
           </ul>
         </section>
         <section className="mid-show-page-container">

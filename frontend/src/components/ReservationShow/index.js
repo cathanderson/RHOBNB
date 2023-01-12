@@ -8,6 +8,7 @@ import "./ReservationShow.css";
 import EditReservationForm from "../EditReservationForm";
 import ReservationMapContainer from "../ReservationMapContainer";
 
+
 function ReservationShow() {
   const dispatch = useDispatch();
   const { id } = useParams();
@@ -20,16 +21,13 @@ function ReservationShow() {
   }, [id, dispatch]);
 
   const reservation = useSelector((state) => state.reservations[id]);
-
+  
   if (!reservation) {
     return null;
   }
 
-
   const { guestId, propertyId, checkInDate, checkOutDate, numGuests } =
     reservation;
-
-  // console.log(reservation.property.description)
 
   const handleCancelClick = () => {
     dispatch(deleteReservation(id));
@@ -37,27 +35,33 @@ function ReservationShow() {
     // <Redirect to="/reservations" />
   };
 
-    const monthNames = {
-      1: "January",
-      2: "February",
-      3: "March",
-      4: "April",
-      5: "May",
-      6: "June",
-      7: "July",
-      8: "August",
-      9: "September",
-      10: "October",
-      11: "November",
-      12: "December",
-    };
+  const monthNames = {
+    1: "January",
+    2: "February",
+    3: "March",
+    4: "April",
+    5: "May",
+    6: "June",
+    7: "July",
+    8: "August",
+    9: "September",
+    10: "October",
+    11: "November",
+    12: "December",
+  };
 
-    const checkInMonth = monthNames[parseInt(checkInDate.split("-")[1])];
-    const checkInDay = checkInDate.split("-")[2];
+  const checkInMonth = monthNames[parseInt(checkInDate.split("-")[1])];
+  const checkInDay = checkInDate.split("-")[2];
 
-    const checkOutMonth = monthNames[parseInt(checkOutDate.split("-")[1])];
-    const checkOutDay = checkOutDate.split("-")[2];
+  const checkOutMonth = monthNames[parseInt(checkOutDate.split("-")[1])];
+  const checkOutDay = checkOutDate.split("-")[2];
 
+  let numGuestsCopy;
+
+  numGuests === 1
+    ? (numGuestsCopy = `${numGuests} guest`)
+    : (numGuestsCopy = `${numGuests} guests`);
+  
   return (
     <>
       <div className="reservation-show">
@@ -124,7 +128,7 @@ function ReservationShow() {
                   Who's coming
                 </div>
                 <div className="reservation-show-page-whos-coming-num-guests">
-                  {numGuests} guests
+                  {numGuestsCopy}
                 </div>
               </div>
             </li>
@@ -137,7 +141,7 @@ function ReservationShow() {
             </div>
           </ul>
         </section>
-        <ReservationMapContainer reservation={reservation}/>
+        <ReservationMapContainer reservation={reservation} />
       </div>
       {showEditReservationModal && (
         <Modal onClose={() => setShowEditReservationModal(false)}>
@@ -151,7 +155,7 @@ function ReservationShow() {
           </header>
           <EditReservationForm
             reservation={reservation}
-            visible={setShowEditReservationModal }
+            visible={setShowEditReservationModal}
           />
         </Modal>
       )}

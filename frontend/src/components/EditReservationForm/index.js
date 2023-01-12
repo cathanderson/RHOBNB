@@ -8,7 +8,6 @@ import * as reservationActions from "../../store/reservations";
 function EditReservationForm({ reservation, visible }) {
   const dispatch = useDispatch();
   const sessionUser = useSelector((state) => state.session.user);
-  console.log(reservation)
 
   let guest_id = null;
   if (sessionUser) {
