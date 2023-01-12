@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 // import { Modal } from "../../context/Modal";
 import * as reservationActions from "../../store/reservations";
+import moment from 'moment'
 
 function NewReservationForm() {
   const dispatch = useDispatch();
@@ -16,15 +17,18 @@ function NewReservationForm() {
   }
 
   const { id } = useParams();
-  const [check_in_date, setCheckInDate] = useState("");
-  const [check_out_date, setCheckOutDate] = useState("");
+  // const [check_in_date, setCheckInDate] = useState("");
+  const [check_in_date, setCheckInDate] = useState(
+    moment().format("YYYY-MM-DD")
+  );
+  const [check_out_date, setCheckOutDate] = useState(
+    moment()
+    .add(7,'days')
+    .format("YYYY-MM-DD")
+  );
   const [num_guests, setNumGuests] = useState("");
   const [errors, setErrors] = useState([]);
   const property_id = id;
-
-  //   if (!sessionUser) return <Redirect to="/" />;
-
-  //   debugger;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -56,7 +60,6 @@ function NewReservationForm() {
 
   return (
     <>
-      {/* <h3 className="new-reservation-form-title">Reserve this home</h3> */}
       <form onSubmit={handleSubmit} className="reservation-form">
         <input type="hidden" value={property_id} />
 
