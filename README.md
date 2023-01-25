@@ -4,7 +4,7 @@
 
 ### **Background** 🏞
 
-[RHOBNB](https://rhobnb.onrender.com/) is a *Real Housewives* themed full-stack clone of the property booking website Airbnb.
+[RHOBNB](https://rhobnb.onrender.com/) is a *Real Housewives* themed full-stack clone of the property booking website Airbnb 🏡.
 
 ***
 
