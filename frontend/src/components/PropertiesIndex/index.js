@@ -13,15 +13,17 @@ function PropertiesIndex() {
   const properties = useSelector((state) => Object.values(state.properties));
   const dispatch = useDispatch();
 
+  const possibleFranchises = ["rhony", "rhonj", "rhobh", "rhoslc", "rhoa"];
+
   useEffect(() => {
-    if (rh_franchise) {
-      dispatch(fetchPropertiesByFranchise(rh_franchise))
+    if (possibleFranchises.includes(rh_franchise)) {
+      dispatch(fetchPropertiesByFranchise(rh_franchise));
     } else {
       dispatch(fetchProperties());
     }
   }, [dispatch, rh_franchise]);
 
-  if (!rh_franchise) {
+  if (!possibleFranchises.includes(rh_franchise)) {
     return (
       <>
         <PropertyFranchiseBar />

@@ -1,6 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 
 function NavSearch() {
+  const [search, setSearch] = useState("");
+  const history = useHistory();
+
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    if (search.length > 0) {
+      history.push(`/${search}`);
+    }
+  };
+
   return (
     <>
       <div className="searchbar-container">
@@ -8,9 +19,17 @@ function NavSearch() {
           <div className="searchbar-anywhere">Anywhere</div>
           <div className="searchbar-any-wife">Any wife</div>
           <div className="searchbar-add-guests">
-            <form id="search-form">
-              <input type="text" placeholder="Search..."></input>
-              <button className="fa-solid fa-magnifying-glass"></button>
+            <form id="search-form" onSubmit={handleSearchSubmit}>
+              <input
+                type="text"
+                placeholder="Search..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+              ></input>
+              <button
+                type="submit"
+                className="fa-solid fa-magnifying-glass"
+              ></button>
             </form>
           </div>
         </div>

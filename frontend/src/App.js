@@ -32,6 +32,10 @@ function App() {
           <PropertiesIndex />
           <ProfileLinksFooter />
         </Route>
+        <Route path="/:search">
+          <PropertiesIndex />
+          <ProfileLinksFooter />
+        </Route>
       </Switch>
     </>
   );
