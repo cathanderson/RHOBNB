@@ -110,7 +110,7 @@
     transition: box-shadow 0.2s ease;
     box-shadow: 2px 2px 2px rgb(230, 230, 230);
     height: 32px;
-    width: 350px;
+    width: 320px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -123,6 +123,9 @@
     color: white;
     padding: 7px;
     margin-right: 6px;
+    margin-left: 6px;
+    border-style: none;
+    cursor: pointer;
 }
 
 .searchbar-container div {
@@ -157,9 +160,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 300px;
+    width: 320px;
     line-height: 24px;
 }
 #app-title-link {
     text-decoration: none;
+}
+#search-form {
+    display: block;
+    justify-content: space-between;
+
+}
+#search-form > input {
+    padding: 8px 8px 8px 6px;
+    border-style: none;
+    height: 20px;
+    width: 60%;
 }
